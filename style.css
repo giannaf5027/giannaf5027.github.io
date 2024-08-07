@@ -1,0 +1,410 @@
+/* Define variables for light mode */
+:root {
+    --switch-bg: #F5F5F6;
+    --title: #5CD6B7;
+    --text: #1F55A6;
+    --body: #0099DE;
+    --back: white;
+    --support: #3fc2ff;
+    --hyperlinks: #4aaeff;
+    --hf: #3fc2ff;
+    --hftxt: white;
+    --hfhover: #0099DE;
+}
+
+/* Dark mode variables */
+.dark-mode {
+    --switch-bg: #353b49;
+    --title: #5CD6B7;
+    --text: #39a8dc;
+    --body: #77dcf8;
+    --back: #2E3440;
+    --support: #8bdaf3;
+    --hyperlinks: #95c8ff;
+    --hf: #1F55A6;
+    --hftxt: #ffffff;
+    --hfhover: #0083c0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--back);
+    color: var(--body);
+}
+
+header {
+    text-align: center;
+    padding: 0;
+}
+
+footer {
+    display: block;
+    clear: both;
+    text-align: center;
+    padding: 0;
+    color: var(--back);
+}
+
+aside {
+    width: 40%;
+    float: left;
+    padding: 0;
+}
+
+section {
+    width: 60%;
+    float: right;
+    padding: 0;
+}
+
+main {
+    margin: 20px;
+    margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Navbar formatting */
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--hf);
+}
+
+.navbar li {
+    position: relative;
+    margin: 0 10px;
+}
+
+.navbar a {
+    color: var(--hftxt);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: var(--hfhover);
+    border-radius: 5px;
+}
+
+.navbar .dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--hf);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px #0c0e11;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--hftxt);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--hfhover);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*dark mode switch*/
+.toggle-container {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-container input[type="checkbox"] {
+    margin: 0 5px;  
+}
+
+.toggle-container label {
+    cursor: pointer;
+}
+
+.toggle-container input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.toggle-label::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s;
+}
+
+.toggle-container input[type="checkbox"]:checked + .toggle-label {
+    background-color: #5CD6B7;
+}
+
+.toggle-container input[type="checkbox"]:checked + .toggle-label::before {
+    transform: translateX(26px);
+}
+
+/* Navbar formatting */
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--hf);
+}
+
+.navbar li {
+    position: relative;
+    margin: 0 10px;
+}
+
+.navbar a {
+    color: var(--hftxt);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: var(--hfhover);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.navbar .dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--hf);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--hftxt);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--hfhover);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.toggle-container input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.toggle-label::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s;
+}
+
+input[type="checkbox"]:checked + .toggle-label {
+    background-color: #5CD6B7;
+}
+
+input[type="checkbox"]:checked + .toggle-label::before {
+    transform: translateX(26px);
+}
+
+
+/* Social bar formatting */
+.social-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.social-bar {
+    display: flex;
+    gap: 20px;
+}
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    text-decoration: none;
+    border-radius: 100%;
+    background: var(--back);
+    color: var(--body);
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.social-button:hover {
+    background-color: var(--body);
+    color: var(--back);
+    transform: scale(1.2);
+}
+
+/* Button formatting */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    background-color: var(--body);
+    padding: 10px;
+    color: var(--back);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: var(--support);
+    text-decoration: none;
+}
+
+.button-link {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Center cover photo */
+#front {
+    height: 400px;
+    filter: drop-shadow(-20px 20px var(--text));
+}
+
+/*clubs table*/
+
+#clubs{
+    margin: 50px;
+}
+
+/* Video and text mask styles */
+.video-wrapper {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+}
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*resume page*/
+.contain {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--switch-bg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    border-bottom: 2px solid var(--body);
+    padding-bottom: 5px;
+    color: var(--body);
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
