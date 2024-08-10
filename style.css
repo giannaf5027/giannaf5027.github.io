@@ -331,11 +331,74 @@ input[type="checkbox"]:checked + .toggle-label::before {
     height: 100%;
 }
 
-/*clubs table*/
-
-#clubs{
-    margin: 50px;
+/* Styles for the clubs table */
+#clubs {
+    margin: 50px auto;
+    max-width: 900px;
 }
+
+.clubs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--switch-bg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.clubs-table th,
+.clubs-table td {
+    padding: 20px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.clubs-table th {
+    width: 30%;
+    background-color: var(--hf);
+    color: var(--hftxt);
+    font-size: 1.2em;
+    border-right: 2px solid var(--hfhover);
+}
+
+.clubs-table td {
+    width: 70%;
+    background-color: var(--back);
+    color: var(--text);
+}
+
+.clubs-table tr:not(:last-child) td {
+    border-bottom: 1px solid var(--hfhover);
+}
+
+.clubs-table h2 {
+    margin: 0;
+}
+
+.clubs-table p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .clubs-table th, 
+    .clubs-table td {
+        display: block;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .clubs-table th {
+        border-right: none;
+        border-bottom: 1px solid var(--hfhover);
+    }
+
+    .clubs-table tr {
+        margin-bottom: 20px;
+    }
+}
+
 
 /* Video and text mask styles */
 /*.video-wrapper {
