@@ -399,6 +399,84 @@ input[type="checkbox"]:checked + .toggle-label::before {
     }
 }
 
+/* Styles for the global experiences table */
+#global-experiences {
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+.experiences-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.experiences-table td {
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.experiences-table h2 {
+    margin: 10px 0;
+    color: var(--hf);
+}
+
+.experiences-table p {
+    margin: 10px 0 20px;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.experiences-table img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-link {
+    text-decoration: none;
+}
+
+.button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: var(--hftxt);
+    background-color: var(--hf);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: var(--hfhover);
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .experiences-table td {
+        display: block;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .experiences-table img {
+        margin-bottom: 20px;
+    }
+
+    .experiences-table tr {
+        margin-bottom: 20px;
+    }
+}
+
 
 /* Video and text mask styles */
 /*.video-wrapper {
