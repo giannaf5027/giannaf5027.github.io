@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts.js" defer></script>
+    <title>Gianna Fernandez</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="content/Images/logo.png">
+    <script>
+        function loadHTML(element, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector(element).innerHTML = data;
+                });
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            loadHTML("header", "header.html");
+            loadHTML("footer", "footer.html");
+        });
+    </script>
+</head>
+<body> 
+    <header></header>
+    <main>
+        <div>
+            <p>
+                My name is Gianna Fernandez and I am currently a second-year undergraduate student at the University of Florida pursuing a Bachelor of Science degree in 
+                Computer Engineering. I am also pursuing a minor in Sales Engineering and the University of Florida’s Artificial Intelligence Certificate. I am passionate 
+                about traveling, traditional Greek folkloric dancing, and nature. Beyond my passions I am ethnically both Greek and Cuban, and am actively a part of the Cuban 
+                American Student Association, and the president of the Greek American Student Association.
+            </p>
+            <p>
+                .
+            </p>
+            <p>
+                .
+            </p>
+        </div>
+    </main>
+    <footer></footer>
+</body>

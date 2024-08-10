@@ -34,8 +34,9 @@ body {
 }
 
 header {
-    text-align: center;
     padding: 0;
+    background-color: var(--hf); 
+    color: var(--hftxt);
 }
 
 footer {
@@ -237,6 +238,7 @@ main {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 
 .toggle-container {
     display: flex;
