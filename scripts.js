@@ -39,21 +39,48 @@ function loadHTML(element, file) {
 }
 
 let currentIndex = 0;
+const carousel = document.querySelector('.carousel');
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
+const itemWidth = items[0].clientWidth + 20; // Assuming 20px gap between items
 
+// Clone all items and append them at the end of the carousel
+items.forEach(item => {
+    const clone = item.cloneNode(true);
+    carousel.appendChild(clone);
+});
+
+// Update totalItems after cloning
+const totalClones = carousel.children.length;
+
+// Set the initial position of the carousel
+carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+// Function to move the carousel
 function moveCarousel(direction) {
-    const carousel = document.querySelector('.carousel');
-    const items = document.querySelectorAll('.carousel-item');
     currentIndex += direction;
 
-    if (currentIndex < 0) {
-        currentIndex = items.length - 1;
-    } else if (currentIndex >= items.length) {
+    // Check if we have reached the end of the cloned items and reset the position
+    if (currentIndex >= totalItems) {
         currentIndex = 0;
+        carousel.style.transition = 'none'; // Disable transition for the jump
+        carousel.style.transform = `translateX(0px)`;
+        setTimeout(() => {
+            carousel.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
+            moveCarousel(direction);
+        }, 0); // Move to the next slide after resetting
+    } else if (currentIndex < 0) {
+        currentIndex = totalItems - 1;
+        carousel.style.transition = 'none'; // Disable transition for the jump
+        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        setTimeout(() => {
+            carousel.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
+            moveCarousel(direction);
+        }, 0); // Move to the previous slide after resetting
+    } else {
+        carousel.style.transition = 'transform 0.5s ease-in-out'; // Regular transition
+        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
-
-    const itemWidth = items[0].clientWidth + 20; // 20 is the gap between items
-    const offset = -currentIndex * itemWidth;
-    carousel.style.transform = `translateX(${offset}px)`;
 }
 
 function showDescription(title, description) {

@@ -528,8 +528,8 @@ input[type="checkbox"]:checked + .toggle-label::before {
 
 /*carousel items*/
 .carousel-item {
-    min-width: 150px;
     height: 300px;
+    min-width: 150px;
     position: relative;
     transition: transform 0.3s ease-in-out;
     z-index: 1;
