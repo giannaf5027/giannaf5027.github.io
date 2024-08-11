@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,43 +9,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/png" href="content/Images/logo.png">
 </head>
-    <body> 
+<body>
     <header></header>
+
     <main>
-        <!--<video src="Videos/flag.MP4" autoplay muted loop></video>-->
-            <div class="text-mask">
-                <h1 style="text-align: center;">Study Abroad</h1>
-            </div>
-        </div>
-        <h2 style="text-align: center;">American College of Greece</h2>
-        <h3 style="text-align: center;">June 8, 2024 - July 26, 2024</h3>
+    <div class="studyab">
+            <h1 style="text-align: center;">Study Abroad</h1>
+            <h2 style="text-align: center;">American College of Greece</h2>
+            <h3 style="text-align: center;">June 8, 2024 - July 26, 2024</h3>
         <p>
             "Παν μέτρον άριστον", the first lesson I received while I was at the American College of Greece: to do everything in moderation. At the college, I was fortunate enough to be a part of their Heritage Greece Program
             (<a href="https://www.instagram.com/heritagegreece/?img_index=2" target="_blank" style="color: var(--hyperlinks); text-decoration: none;" title="Heritage Greece Instagram">@heritagegreece</a> on Instagram). 
             This program takes students with Greek ancestral roots from all over the United States and Canada to teach them in Greece about their culture. The activities done throughout the program bring a mix of the 
-            touristic highlights as well as more localized aspects of Greece. 
+            touristic highlights as well as more localized aspects of Greece.
         </p>
+
         <p>
-            Throughout the Heritage Greece Program, we were able to experience that, and so much more. It opened my eyes to how much more things there are to do in Greece 
+            Throughout the Heritage Greece Program, we were able to experience that, and so much more. It opened my eyes to how much more there is to do in Greece 
             and what it really is. It also showed me the true Greek values and the Greek way of life. Prior to coming to Heritage Greece I knew that there were some 
             differences with the Greek way of life than the American way of life, but never fully understood it until experiencing it. For example, it is socially acceptable 
             for siestas in the middle of the day, unlike American culture. In addition, I did not know that a good olive oil would burn you if you sipped it like wine to 
             extract the flavor. Another fun fact is that most construction is done in the winter months in Athens so that tourists do not see it.
         </p>
+
         <p> 
             One thing I especially loved about the program was that we were required to take a Greek language class in the mornings before the activities. A majority of 
             the days, we would end up using the language we learned in class outside of the classroom in everyday situations. In addition, you are paired with students 
             that study at the university and live with you during the duration of the session. If anyone is interested in applying for Heritage Greece I highly recommend 
             it, and you can view some of my experience down below.
         </p>
+
         <div class="container">
-            <a class="button-link" href="https://www.acg.edu/admissions/study-abroad/heritage-greece/" style="text-align: center;" target="_blank" title="Heritage Greece Application">
+            <a class="button-link" href="https://www.acg.edu/admissions/study-abroad/heritage-greece/" target="_blank" title="Heritage Greece Application">
                 <button class="button">
                     Apply Now
                 </button>
             </a>
         </div>
+    </div>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item" onclick="showDescription('Elefsis Shipyard', 'Sunny day at the Elefsis Shipyard, which is the largest in Greece.')">
+                    <img src="content/Images/shipyard.JPEG" alt="Greece 1">
+                </div>
+                <div class="carousel-item" onclick="showDescription('Poseidon Temple', 'At Poseidon Temple in Cape Sounio.')">
+                    <img src="content/Images/capesunio.JPEG" alt="Greece 2">
+                </div>
+                <div class="carousel-item" onclick="showDescription('Parliment', 'Inside tour of the Hellenic Parliament.')">
+                    <img src="content/Images/parliment.JPEG" alt="Greece 3">
+                </div>
+                <div class="carousel-item" onclick="showDescription('Acropolis', 'A pretty view at sunst. Also there are no straight line on the Parthenon. The ancienc Greeks used the golden ratio in order to make it look straight.')">
+                    <img src="content/Images/sunset.JPEG" alt="Greece 4">
+                </div>
+                
+            </div>
+
+            <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+
+        <div id="description-section">
+            <h4 id="image-title"></h4>
+            <p id="image-description"></p>
+        </div>
+
     </main>
-    <footer></footer>
+
+    <footer>
+        <p>&copy; 2024 Study Abroad Program. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

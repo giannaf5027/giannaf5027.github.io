@@ -37,7 +37,6 @@ body {
 }
 
 header {
-    padding: 0;
     background-color: var(--hf); 
     color: var(--hftxt);
     align-items: center;
@@ -52,22 +51,15 @@ footer {
     background-color: var(--hf);
     color: var(--hftxt);
     text-align: center;
-    width: 100%;
     display: block;
     clear: both;
     padding-bottom: 1px;
 }
 
-aside {
-    width: 40%;
-    float: left;
-    padding: 0;
-}
-
 main {
     margin: 20px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #fronttable {
@@ -477,24 +469,6 @@ input[type="checkbox"]:checked + .toggle-label::before {
     }
 }
 
-
-/* Video and text mask styles */
-/*.video-wrapper {
-    position: relative;
-    width: 80vw;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin: 0 auto;
-}
-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-}*/
-
 /* resume page styles */
 .contain {
     width: 80%;
@@ -525,4 +499,104 @@ video {
 
 .contain li {
     margin-bottom: 5px;
+}
+
+/*study abroad page*/
+
+.studyab {
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 5%;
+    display: block;
+    padding: 20px;
+}
+
+/*carousel*/
+.carousel-container {
+    position: relative;
+    max-width: 80%;
+    margin: 50px auto;
+    overflow: hidden;
+    padding: 0 60px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+}
+
+/*carousel items*/
+.carousel-item {
+    min-width: 150px;
+    height: 300px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover {
+    transform: scale(1.1);
+    z-index: 3;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Navigation buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: var(--back);
+    background-color: var(--support);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    z-index: 4;
+    border: none;
+}
+
+.prev {
+    left: 10px;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: var(--bhover);
+}
+
+/*descriptions*/
+#description-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#description-section h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#description-section p {
+    font-size: 16px;
+    color: var(--text)
 }

@@ -37,3 +37,26 @@ function loadHTML(element, file) {
         })
         .catch(error => console.error('Error loading HTML:', error));
 }
+
+let currentIndex = 0;
+
+function moveCarousel(direction) {
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel-item');
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = items.length - 1;
+    } else if (currentIndex >= items.length) {
+        currentIndex = 0;
+    }
+
+    const itemWidth = items[0].clientWidth + 20; // 20 is the gap between items
+    const offset = -currentIndex * itemWidth;
+    carousel.style.transform = `translateX(${offset}px)`;
+}
+
+function showDescription(title, description) {
+    document.getElementById('image-title').textContent = title;
+    document.getElementById('image-description').textContent = description;
+}
