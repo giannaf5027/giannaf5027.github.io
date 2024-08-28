@@ -38,47 +38,45 @@ function loadHTML(element, file) {
         .catch(error => console.error('Error loading HTML:', error));
 }
 
+
+// study abroad page
 let currentIndex = 0;
 const carousel = document.querySelector('.carousel');
 const items = document.querySelectorAll('.carousel-item');
 const totalItems = items.length;
-const itemWidth = items[0].clientWidth + 20; // Assuming 20px gap between items
+const itemWidth = items[0].clientWidth + 20;
 
-// Clone all items and append them at the end of the carousel
 items.forEach(item => {
     const clone = item.cloneNode(true);
     carousel.appendChild(clone);
 });
 
-// Update totalItems after cloning
 const totalClones = carousel.children.length;
 
-// Set the initial position of the carousel
 carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 
-// Function to move the carousel
 function moveCarousel(direction) {
     currentIndex += direction;
 
-    // Check if we have reached the end of the cloned items and reset the position
+
     if (currentIndex >= totalItems) {
         currentIndex = 0;
-        carousel.style.transition = 'none'; // Disable transition for the jump
+        carousel.style.transition = 'none';
         carousel.style.transform = `translateX(0px)`;
         setTimeout(() => {
-            carousel.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
+            carousel.style.transition = 'transform 0.5s ease-in-out';
             moveCarousel(direction);
-        }, 0); // Move to the next slide after resetting
+        }, 0);
     } else if (currentIndex < 0) {
         currentIndex = totalItems - 1;
-        carousel.style.transition = 'none'; // Disable transition for the jump
+        carousel.style.transition = 'none';
         carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
         setTimeout(() => {
-            carousel.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
+            carousel.style.transition = 'transform 0.5s ease-in-out';
             moveCarousel(direction);
-        }, 0); // Move to the previous slide after resetting
+        }, 0);
     } else {
-        carousel.style.transition = 'transform 0.5s ease-in-out'; // Regular transition
+        carousel.style.transition = 'transform 0.5s ease-in-out';
         carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
 }
@@ -87,3 +85,6 @@ function showDescription(title, description) {
     document.getElementById('image-title').textContent = title;
     document.getElementById('image-description').textContent = description;
 }
+
+
+// photos page?
