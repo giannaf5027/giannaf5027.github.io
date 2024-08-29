@@ -1,21 +1,48 @@
-<div class="gallery">
-    <div class="gallery-item square">
-        <img src="content/Images/foust.JPEG" alt="Foust">
-        <div class="description">Foust Building</div>
-    </div>
-    <div class="gallery-item square">
-        <img src="content/Images/parliment.JPEG" alt="Parliament">
-        <div class="description">Hellenic Parliament</div>
-    </div>
-    <div class="gallery-item vertical">
-        <img src="content/Images/sunset.JPEG" alt="Acropolis Sunset">
-        <div class="description">Acropolis at Sunset</div>
-    </div>
-    <div class="gallery-item square">
-        <img src="content/Images/shipyard.JPEG" alt="Shipyard">
-        <div class="description">Elefsis Shipyard</div>
-    </div>
-    <!-- Add more placeholders as needed -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts.js" defer></script>
+    <title>Photos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="content/Images/logo.png">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="filterBar" class="filter-bar">
+            <button onclick="filterPhotos('all')">All</button>
+            <button onclick="filterPhotos('study-abroad')">Study Abroad</button>
+            <button onclick="filterPhotos('uf')">UF</button>
+            <button onclick="filterPhotos('misc')">Misc</button>
+        </div>
+        <div class="photos-gallery">
+            <div class="photos-gallery-item study-abroad landscape">
+                <img src="content/Images/foust.JPEG" alt="Foust">
+                <div class="photos-info">
+                    <div class="photos-title">Foustanella</div>
+                    <div class="photos-description">Foustanellas, the skirts of the military uniforms, have 400 pleats in them as symbolism for the 400 years that Greece was under Ottoman control.</div>
+                </div>
+            </div>
+            <div class="photos-gallery-item uf portrait">
+                <img src="content/Images/parliment.JPEG" alt="Parliament">
+                <div class="photos-info">
+                    <div class="photos-title">Parliament</div>
+                    <div class="photos-description">This is a photo taken from my experience on an inside tour of the Hellenic Parliament in Athens, Greece</div>
+                </div>
+            </div>
+            <div class="photos-gallery-item misc">
+                <video src="content/Videos/dancing.MP4" autoplay loop muted></video>
+                <div class="photos-info">
+                    <div class="photos-title">Midnights</div>
+                    <div class="photos-description">A beautiful dance performance.</div>
+                </div>
+            </div>            
+        </div>    
+    </main>
+    <footer></footer>
+</body>
+</html>
 
-    <!--idea: use js to filter out what photos ie. greece, UF, GASA, etc.-->
-</div>

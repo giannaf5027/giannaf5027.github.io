@@ -81,10 +81,25 @@ function moveCarousel(direction) {
     }
 }
 
+
+// used for both study abroad and photos page
+
 function showDescription(title, description) {
     document.getElementById('image-title').textContent = title;
     document.getElementById('image-description').textContent = description;
 }
 
 
-// photos page?
+
+// photos page
+function filterPhotos(category) {
+    var items = document.querySelectorAll('.photos-gallery-item');
+
+    items.forEach(function(item) {
+        if (category === 'all' || item.classList.contains(category)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
