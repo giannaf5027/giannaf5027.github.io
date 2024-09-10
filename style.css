@@ -1,6 +1,22 @@
 /* Define variables for light mode */
 :root {
   --switch-bg: #f5f5f6;
+  --title: #44dbb5;
+  --text: #255fb6;
+  --body: #008aca;
+  --back: white;
+  --support: #3bb2e9;
+  --hyperlinks: #002fff;
+  --hf: #31b3f0;
+  --hftxt: white;
+  --hfhover: #0092d6;
+  --bhover: #0062ca;
+  --shaddow: #bebebe;
+  --dark-shaddow: #4d4d4d;
+}
+
+/* original light mode    
+  --switch-bg: #f5f5f6;
   --title: #5cd6b7;
   --text: #1f55a6;
   --body: #0099de;
@@ -12,8 +28,7 @@
   --hfhover: #0099de;
   --bhover: #0062ca;
   --shaddow: #bebebe;
-  --dark-shaddow: #4d4d4d;
-}
+  --dark-shaddow: #4d4d4d; */
 
 /* Dark mode variables */
 .dark-mode {
@@ -43,7 +58,6 @@ body {
 header {
   background-color: var(--hf);
   color: var(--hftxt);
-  align-items: center;
 }
 
 header img {
@@ -68,56 +82,55 @@ main {
 }
 
 .format {
-  max-width: 900px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.format2 {
+  max-width: 1500px;
   margin: 0 auto;
 }
 
 /*homepage*/
-
-#fronttable {
-  width: 90%;
-  padding: 20px;
-  border-radius: 10px;
+.front {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-#fronttable th {
-  vertical-align: top;
+.front__item {
+  display: flex;
+  flex: 1 50%;
+  flex-direction: column;
 }
 
-#fronttable img {
-  height: 400px;
-  padding-left: 20%;
+.front_img img {
+  max-width: 400px;
   filter: drop-shadow(-20px 20px var(--text));
   display: block;
+  padding-top: 15px;
+  padding-bottom: 35px;
 }
 
-#fronttext {
+.front_txt {
   text-align: center;
   max-width: 600px;
-  margin-right: 20px;
+  padding: 30px;
 }
 
-@media screen and (max-width: 1300px) {
-  #fronttable {
-    display: block;
-    width: 100%;
-    padding: 10px;
-  }
+.front p {
+  font-size: 18px;
+  text-align: left;
+}
 
-  #fronttable th {
-    display: block;
-    width: 100%;
-  }
+.front h2{
+  font-size: 25px;
+  text-align: center;
+}
 
-  #fronttable img {
-    display: block;
-    margin: 0 auto;
-  }
-
-  #fronttext {
-    text-align: center;
-    margin-right: 0;
-  }
+.front h1{
+  font-size: 35px;
+  text-align: center;
+  color: var(--title)
 }
 
 /*dark mode switch*/
@@ -178,6 +191,7 @@ main {
   align-items: center;
   justify-content: center;
   background-color: var(--hf);
+  font-size: 20px;
 }
 
 .navbar li {
@@ -483,41 +497,6 @@ input[type="checkbox"]:checked + .toggle-label::before {
 .projects h2,
 .projects p {
   margin: 0;
-}
-
-/* .projects-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 0 auto;
-  background-color: var(--switch-bg);
-  box-shadow: var(--shaddow);
-}
-
-.projects-table td {
-  padding: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.projects-table h2 {
-  margin: 10px 0;
-  color: var(--hf);
-}
-
-.projects-table p {
-  margin: 10px 0 20px;
-  line-height: 1.6;
-  color: var(--text);
-}
-
-.projects-table img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-  filter: drop-shadow(0px 8px 10px var(--dark-shaddow));
 }
 
 /* Responsive design */
