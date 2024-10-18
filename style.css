@@ -75,6 +75,11 @@ main {
   margin: 0 auto;
 }
 
+/* Responsive design */
+@media screen and (max-width: 768px){
+
+}
+
 /*dark mode switch*/
 .toggle-container {
   padding-left: 10px;
@@ -419,27 +424,7 @@ input[type="checkbox"]:checked + .toggle-label::before {
   line-height: 1.6;
 }
 
-/* Responsive design */
-@media screen and (max-width: 768px) {
-  .clubs-table th,
-  .clubs-table td {
-    display: block;
-    width: 100%;
-    padding: 15px;
-  }
-
-  .clubs-table th {
-    border-right: none;
-    border-bottom: 1px solid var(--hfhover);
-  }
-
-  .clubs-table tr {
-    margin-bottom: 20px;
-  }
-}
-
 /* global experience page */
-
 .gexp {
   display: flex;
   flex-wrap: wrap;
@@ -540,7 +525,6 @@ input[type="checkbox"]:checked + .toggle-label::before {
 }
 
 /*study abroad page*/
-
 .studyab {
   width: 80%;
   margin: 0 auto;
