@@ -491,19 +491,28 @@ input[type="checkbox"]:checked + .toggle-label::before {
 }
 
 /* resume page */
+.space {
+  margin-left: 10px;
+}
+
 .contain {
   width: 80%;
   margin: 0 auto;
-  padding-left: 5%;
+  margin-top: 20px;
   background-color: var(--switch-bg);
   box-shadow: 0 0 10px var(--shaddow);
   display: block;
   padding: 20px;
 }
 
-.contain section {
-  margin-bottom: 40px;
+.bottom { 
+  margin-bottom: 0px !important;
 }
+.contain section { 
+  margin-bottom: 30px;
+}
+
+
 
 .contain h1,
 .contain h2,
