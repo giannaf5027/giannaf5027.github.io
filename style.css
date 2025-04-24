@@ -32,12 +32,113 @@
   --dark-shaddow: #0a0a0a;
 }
 
+
+/* Navbar styling
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--hf);
+  padding: 10px 20px;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.navbar-menu li {
+  position: relative;
+}
+
+.navbar-menu a {
+  color: var(--hftxt);
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  text-align: center;
+}
+
+.navbar-menu a:hover {
+  background-color: var(--hfhover);
+  border-radius: 5px;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.navbar-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Right-align navbar items
+.navbar-menu {
+  display: flex;
+}
+
+.navbar-menu li {
+  margin-left: auto;
+}
+
+/* Hide the menu by default on small screens 
+.navbar-menu {
+  display: none;
+}
+
+.navbar-menu.active {
+  display: flex;
+}
+ */
+/* Show the hamburger menu only on mobile
+@media screen and (max-width: 768px) {
+  .navbar-menu {
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--hf);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-menu li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
+/*  */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: var(--back);
   color: var(--body);
   max-width: 100%;
+}
+
+header, footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
@@ -53,10 +154,10 @@ header img {
 footer {
   background-color: var(--hf);
   color: var(--hftxt);
-  text-align: center;
+  /* text-align: center;
   display: block;
   clear: both;
-  padding-bottom: 1px;
+  padding-bottom: 1px; */
 }
 
 main {
@@ -372,7 +473,7 @@ input[type="checkbox"]:checked + .toggle-label::before {
 }
 
 .about_txt {
-  padding: 10px;
+  padding: 30px;
 }
 
 /* clubs page */
@@ -428,6 +529,7 @@ input[type="checkbox"]:checked + .toggle-label::before {
 .gexp {
   display: flex;
   flex-wrap: wrap;
+  margin: 50px auto;
 }
 
 .gexp_item {
@@ -512,7 +614,47 @@ input[type="checkbox"]:checked + .toggle-label::before {
   margin-bottom: 30px;
 }
 
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.links {
+  display: flex;
+  flex: 1 30%;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 2px;
+}
+
+.techskills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills {
+  display: flex;
+  flex: 2 30%;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  padding: 0 2px;
+}
+
+.highschool {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hs {
+  display: flex;
+  flex: 2 40%;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  padding: 0 2px;
+}
 
 .contain h1,
 .contain h2,
