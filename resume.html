@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gianna Fernandez" />
+    <meta name="keywords" content="resume, Gianna Fernandez, Gianna Elena Fernandez, Gianna E. Fernandez, computer engineering, AI, data science, internship, computer science resume, software engineering, technical skills, Florida" />
+    <meta name="description" content="Personal resume of Gianna Fernandez">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="scripts.js" defer></script>
     <title>Resume</title>
@@ -12,242 +16,285 @@
     />
     <link rel="icon" type="image/png" href="content/Images/logo.png" />
   </head>
-  <body>
-    <header></header>
-    <main>
+<body>
+  <!-- like the top box here just needs a little work tho -->
+  <div class="min-h-screen flex flex-col" style="background-color: var(--back); color: var(--body)">
+    <header class="p-6" style="background-color: var(--hf); color: var(--hftxt)"></header>
       <div class="format">
         <div class="contain">
           <div class="space">
-            <section>
-              <h1>Gianna Elena Fernandez</h1>
-              <p>
-                Email:
-                <a href="mailto:Giannaef27@gmail.com">Giannaef27@gmail.com</a>
-              </p>
-              <p>Phone: <a href="tel:305-761-9661">305-761-9661</a></p>
-              <p>
-                LinkedIn:
-                <a href="http://www.linkedin.com/in/gef5027" target="_blank"
-                  >linkedin.com/in/gef5027</a
-                >
-              </p>
-              <br />
-              <a
-                href="content/Gianna_Fernandez_Resume.pdf"
-                download
-                class="button"
-                id="download-btn"
-                onclick="startDownload()"
-                title="Downlad Resume"
-                >Download My Resume</a
-              >
-            </section>
-            <section>
-              <h2>Objective</h2>
-              <p>
-                Seeking a summer 2025 internship in the fields of engineering,
-                computer science, data science, or artificial intelligence.
-                Eager to apply and expand academic knowledge in a real-world
-                setting, committed to contributing innovative solutions, and
-                gaining valuable hands-on experience in these cutting-edge
-                fields.
-              </p>
-            </section>
+            <h1 class="text-3xl font-bold mb-2" style="text-align: center;">Gianna Elena Fernandez</h1>
+            <div class="contact-links">
+              <div class="links">
+              <a href="mailto:giannaef27@gmail.com" class="flex items-center hover:var(--hyperlinks)">
+                <i class="fas fa-envelope mr-2"></i> giannaef27@gmail.com
+              </a>
+              </div>
+              <div class="links">
+              <a href="tel:305-761-9661" class="flex items-center hover:var(--hyperlinks)">
+                <i class="fas fa-phone mr-2"></i> 305-761-9661
+              </a>
+              </div>
+              <div class="links">
+              <a href="http://www.linkedin.com/in/gef5027" target="_blank" rel="noopener noreferrer" class="flex items-center hover:var(--hyperlinks)">
+                <i class="fab fa-linkedin mr-2"></i> linkedin.com/in/gef5027
+              </a>
+              </div>
+            </div>
+            <div class="contact-links">
+              <div class="links">
+      <a href="/Gianna_Fernandez-Resume.pdf" download class="mt-4 inline-block px-4 py-2 rounded-full font-semibold flex items-center hover:var(--hyperlinks) transition duration-300" style="color: var(--body); padding: 1.5%">
+        <i class="fas fa-download mr-2"></i> Download Resume
+      </a>
+      </div>
+      </div>
+      
+    </header>
+    <main class="flex-grow p-4 md:p-8">
+      <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-6" style="background-color: var(--switch-bg); color: var(--text)">
+          <!-- Objective Section -->
+          <section class="mb-6">
+            <h2 class="text-2xl font-bold mb-3 pb-1" style="color: var(--title); border-bottom: 1px solid var(--support)">Objective</h2>
+            <p>Seeking a summer 2026 internship in the fields of engineering, computer science, data science, or artificial intelligence. Eager to apply and expand academic knowledge in a real-world setting, committed to contributing innovative solutions, and gaining valuable hands-on experience in these cutting-edge fields.</p>
+          </section>
 
-            <section>
-              <h2>Technical Skills</h2>
-              <ul>
-                <h3>Programming Languages</h3>
-                <li>Python</li>
-                <li>C++</li>
-                <li>JavaScript</li>
-                <li>HTML</li>
-                <li>CSS</li>
+          <!-- Technical Skills Section -->
+          <section class="mb-6">
+            <h2 class="text-2xl font-bold mb-3 pb-1" style="color: var(--title); border-bottom: 1px solid var(--support)">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="techskills">
+              <div class="skills">
+                <h3 class="font-semibold mb-2" style="color: var(--text)">Programming Languages</h3>
+                <ul class="list-disc pl-5">
+                  <li>Python</li>
+                  <li>C++</li>
+                  <li>JavaScript</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                </ul>
+              </div>
+              <div class="skills">
+                <h3 class="font-semibold mb-2" style="color: var(--text)">Digital Skills</h3>
+                <ul class="list-disc pl-5">
+                  <li>Marketing and Social Media Strategies</li>
+                  <li>Microsoft Excel</li>
+                  <li>Graphic Design</li>
+                  <li>Adobe Photoshop</li>
+                  <li>Adobe InDesign</li>
+                </ul>
+              </div>
+              <div class="skills">
+                <h3 class="font-semibold mb-2" style="color: var(--text)">Languages</h3>
+                <ul class="list-disc pl-5">
+                  <li>Spanish</li>
+                  <li>Greek</li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </section>
 
-                <h3>Digital Skills</h3>
-                <li>Marketing and Social Media Strategies</li>
-                <li>Microsoft Excel</li>
-                <li>Graphic Design</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe InDesign</li>
-
-                <h3>Languages</h3>
-                <li>Spanish</li>
-                <li>Greek</li>
+          <!-- Education Section -->
+          <section class="mb-6">
+            <h2 class="text-2xl font-bold mb-3 pb-1" style="color: var(--title); border-bottom: 1px solid var(--support)">Education</h2>
+            <div class="mb-4">
+              <h3 class="font-semibold" style="color: var(--text)">University of Florida</h3>
+              <p class="text-sm" style="color: var(--support)">GPA: 3.77</p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>Major: Computer Engineering, Minor: Sales Engineering, AI Certificate</li>
+                <li>Relevant coursework: Engineering Design & Society, Intro to Engineering, Engineering Calc 1, 2, & 3, Differential Equations, Physics 1 & 2, Intro to Information Systems, Programing Fundamentals (Python & C++), AI Fundamentals</li>
               </ul>
-            </section>
-
-            <section>
-              <h2>Education</h2>
-              <h3>University of Florida</h3>
-              <p>3.64 GPA</p>
-              <p>
-                Major: Computer Engineering, Minor: Sales Engineering, AI
-                Certificate
-              </p>
-              <p>
-                Relevant coursework: Engineering Design & Society; Intro to
-                Engineering; Engineering Calculus 1, 2, & 3; Differential Equations; Physics 1; Intro to
-                Information Systems; Ethics, Data, and Technology; AI Fundamentals; Programing Fundamentals (Python & C++)
-              </p>
-              <h3>American College of Greece (Athens, Greece)</h3>
-              <p>Heritage Greece and Study Abroad programs</p>
-              <p></p>
-              <h3>Eastern Florida State College</h3>
-              <p>3.95 GPA</p>
-              <p>Associate of Arts Degree via dual enrollment (60+ credits)</p>
-              <p>
-                Recipient of President’s List Academic Achievement award
-                (2021-2023)
-              </p>
-              <p>
-                Relevant coursework: Statistics, Calculus, Financial &
-                Managerial Accounting, Biology, Psychology, Macroeconomics,
-                Microeconomics, Marketing Principles, Speech Communication
-              </p>
-              <h3>Edgewood Jr/Sr High School</h3>
-              <p>3.92 GPA and 4.50 weighted GPA</p>
-              <p>Diploma of Distinction</p>
-              <p>
-                Relevant Coursework: AP Computer Science Principles
-                (JavaScript), Digital Design
-              </p>
-              <p>Duration: Aug 2018 - May 2023</p>
-            </section>
-
-            <section>
-              <h2>Certifications</h2>
-              <ul>
-                <li>
-                  Digital Marketing Institute: Certified Digital Marketing
-                  Associate - Aug 2024
-                </li>
-                <li>
-                  Microsoft Office Specialist: Excel Associate (Office 2019) -
-                  Oct 2023
-                </li>
-                <li>
-                  Adobe Certified Professional in Visual Design - Mar 2023
-                </li>
-                <li>
-                  Adobe Certified Professional in Graphic Design & Illustration
-                  Using Adobe Illustrator - Mar 2023
-                </li>
-                <li>
-                  Adobe Certified Professional in Visual Design Using Adobe
-                  Photoshop - Dec 2022
-                </li>
+            </div>
+            <div class="mb-4">
+              <h3 class="font-semibold" style="color: var(--text)">American College of Greece (Athens, Greece)</h3>
+              <ul class="list-disc pl-5 mt-1">
+                <li>Heritage Greece and Study Abroad programs</li>
               </ul>
-            </section>
-
-            <section>
-              <h2>Leadership, Extracurriculars & Awards</h2>
-              <ul>
-                <li>
-                  UF Greek American Student Association – President
-                  (2023-Present)
-                </li>
-                <li>UF Open Source Club (2023-Present)</li>
-                <li>UF Cuban American Student Association (2023-Present)</li>
-                <li>
-                  UF Society of Hispanic Professional Engineers (2023-Present)
-                </li>
-                <li>UF Society of Women Engineers (2023-Present)</li>
-                <li>
-                  Afieroma - Traditional Greek folk dancing team (2023-Present)
-                </li>
-                <li>
-                  FAITH Scholarship for Academic Excellence Recipient (Sept
-                  2023)
-                </li>
-                <li>
-                  Space Coast Women in Defense Scholarship Recipient (June 2023)
-                </li>
-                <li>Bright Futures Scholarship (Aug 2023)</li>
+            </div>
+            <div class="mb-4">
+              <h3 class="font-semibold" style="color: var(--text)">Eastern Florida State College</h3>
+              <p class="text-sm" style="color: var(--support)">GPA: 3.95</p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>Associate of Arts Degree via dual enrollment (60+ credits)</li>
+                <li>Recipient of President's List Academic Achievement award (2021-2023)</li>
+                <li>Relevant coursework: Statistics, Calculus, Financial & Managerial Accounting, Biology, Psychology, Macroeconomics, Microeconomics, Marketing Principles, Speech Communication</li>
               </ul>
-            </section>
+            </div>
+            <div class="mb-4">
+              <h3 class="font-semibold" style="color: var(--text)">Edgewood Jr/Sr High School</h3>
+              <p class="text-sm" style="color: var(--support)">GPA: 3.92 and 4.50 weighted</p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>Diploma of Distinction</li>
+                <li>Relevant Coursework: AP Computer Science Principles (JavaScript), Digital Design</li>
+                <li>Duration: Aug 2018 - May 2023</li>
+              </ul>
+            </div>
+          </section>
 
-            <section>
-              <h2>Community Service</h2>
-              <ul>
-                <p>500+ hours of community service</p>
-                <h4>Keep Brevard Beautiful - (May 2020 - Dec 2020)</h4>
+          <!-- Certifications Section -->
+          <section class="mb-6">
+            <h2 class="text-2xl font-bold mb-3 pb-1" style="color: var(--title); border-bottom: 1px solid var(--support)">Certifications</h2>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>NVIDIA Fundamentals of Deep Learning - Nov 2024</li>
+              <li>Digital Marketing Institute: Certified Digital Marketing Associate - Aug 2024</li>
+              <li>Microsoft Office Specialist: Excel Associate (Office 2019) - Oct 2023</li>
+              <li>Adobe Certified Professional in Visual Design - Mar 2023</li>
+              <li>Adobe Certified Professional in Graphic Design & Illustration Using Adobe Illustrator - Mar 2023</li>
+              <li>Adobe Certified Professional in Visual Design Using Adobe Photoshop - Dec 2022</li>
+            </ul>
+          </section>
+
+          <!-- Work experience -->
+          <section class="mb-6">
+            <h2 class="text-2xl font-bold mb-3 pb-1" style="color: var(--title); border-bottom: 1px solid var(--support)">Work Experience</h2>
+            <div class="mb-4">
+              <h3 class="font-semibold" style="color: var(--text)">University of Florida IT: Student Assistant</h3>
+              <p class="text-sm" style="color: var(--support)">Duration: Aug 2024 - Present</p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>
+              Managed setting up computer hardware and software and
+              troubleshooting.
+            </li>
+            <li>
+              Resolved student inquiries regarding Microsoft and Apple
+              Technologies.
+            </li>
+            <li>
+              Assisted in the setup of events around campus such as Career
+              Fair.
+            </li>
+          </ul>
+            </div>
+            <div class="mb-4">
+              <h3 class="font-semibold" style="color: var(--text)">Cliquify: Prompt Engineering Intern</h3>
+              <p class="text-sm" style="color: var(--support)">Duration: May 2024</p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>
+                  Manipulated AI to produce optimized and efficient outputs for
+                  hiring campaigns.
+                </li>
+                <li>Assessed outputs for human-like responses.</li>
+          </ul>
+            </div>
+            <div class="mb-4">
+              <h3 class="font-semibold" style="color: var(--text)">Surf Instructor at Ohana Surf School</h3>
+              <p class="text-sm" style="color: var(--support)">Duration: May 2022 - Aug 2022</p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>Taught children the fundamental skills of how to surf</li>
+          </ul>
+            </div>
+          </section>
+          <section class="mb-6">
+            <h2 class="text-2xl font-bold mb-3 pb-1" style="color: var(--title); border-bottom: 1px solid var(--support)">Leadership, Extracurriculars & Awards
+          </h2>
+            <div class="mb-4">
+              <ul class="list-disc pl-5 mt-1">
+              <li>
+                UF Greek American Student Association – President
+                (2023-Present)
+              </li>
+              <li>UF Open Source Club (2023-Present)</li>
+              <li>UF Cuban American Student Association (2023-Present)</li>
+              <li>
+                UF Society of Hispanic Professional Engineers (2023-Present)
+              </li>
+              <li>UF Society of Women Engineers (2023-Present)</li>
+              <li>
+                Afieroma - Traditional Greek folk dancing team (2023-Present)
+              </li>
+              <li>
+                FAITH Scholarship for Academic Excellence Recipient (Sept
+                2023)
+              </li>
+              <li>
+                Space Coast Women in Defense Scholarship Recipient (June 2023 & June 2024)
+              </li>
+              <li>Bright Futures Scholarship (Aug 2023)</li>
+            </ul>
+          </section>
+
+          <section class="mb-6">
+            <h2 class="text-2xl font-bold mb-3 pb-1" style="color: var(--title); border-bottom: 1px solid var(--support)">Community Service</h2>
+            <div class="mb-4">
+              <p>500+ hours of community service</p>
+              <h3 class="font-semibold" style="color: var(--text)">Keep Brevard Beautiful</h3>
+              <p class="text-sm" style="color: var(--support)">Duration: May 2020 - Dec 2020</p>
+              <ul class="list-disc pl-5 mt-1">
                 <li>
                   Helped create a cleaner and safer environment in Cocoa Beach
                 </li>
-                <h4>Virtual Tutoring - Aug 2018 - May 2023</h4>
+              </ul>
+                <h3 class="font-semibold" style="color: var(--text)">Virtual Tutoring</h3>
+              <p class="text-sm" style="color: var(--support)">Duration: Aug 2018 - May 2023</p>
+              <ul class="list-disc pl-5 mt-1">
                 <li>
                   Established an online tutoring service to aid students with
                   their studies
                 </li>
-                <h4>Media Center Intern - (Aug 2020 - May 2023)</h4>
-                <li>the school library dealing with various book exchanges</li>
+              </ul>
+              <h3 class="font-semibold" style="color: var(--text)">Media Center Intern</h3>
+              <p class="text-sm" style="color: var(--support)">Duration: Aug 2020 - May 2023</p>
+              <ul class="list-disc pl-5 mt-1">
+                <li>Aided the school library with various book exchanges</li>
+                <li>Maintained the cleanliness and order of the media center</li>
               </ul>
             </section>
+            
+            <section class="mb-6">
+              <h2 class="text-2xl font-bold mb-3 pb-1" style="color: var(--title); border-bottom: 1px solid var(--support)">High School Extracurriculars and Interests</h2>
+              <div class="mb-4">
+                <div class="highschool">
+                  
+                  <div class="hs">
+            <h3 class="font-semibold mb-2" style="color: var(--text)">Sports:</h3>
+            <ul class="list-disc pl-5">
+              <li>Space Coast Soccer</li>
+              <li>Varsity Cross Country</li>
+              <li>Varsity Track & Field</li>
+              <li>Surfing</li>
+              <li>Skiing</li>
+            </ul>
+                  </div>
+                  <div class="hs">
+            <h3 class="font-semibold mb-2" style="color: var(--text)">Clubs:</h3>
+            <ul class="list-disc pl-5">
+              <li>Fellowship of Christian Athletes (President)</li>
+              <li>Student Government (Sergeant of Arms)</li>
+              <li>National Honors Society</li>
+              <li>Key Club International</li>
+              <li>National Society of Leadership and Success</li>
+              <li>Faith Fellowship Youth Group (Leader in Training)</li>
+            </ul>
+                  </div>
+                  <div class="hs">
+            <h3 class="font-semibold mb-2" style="color: var(--text)">Cultural:</h3>
+            <ul class="list-disc pl-5">
+              <li>Grecian Odyssey Dancers</li>
+              <li>Greek Orthodox Youth Association (Treasurer)</li>
+            </ul>
+                  </div>
+                  <div class="hs">
+            <h3 class="font-semibold mb-2" style="color: var(--text)">Music:</h3>
+            <ul class="list-disc pl-5">
+              <li>Space Coast Youth Symphony (Violin)</li>
+            </ul>
+                  </div>
+                </div>
+          </section>
 
-            <section>
-              <h2>Work Experience</h2>
-              <h3>University of Florida IT: Student Assistant</h3>
-              <li>
-                Managed setting up computer hardware and software and
-                troubleshooting.
-              </li>
-              <li>
-                Resolved student inquiries regarding Microsoft and Apple
-                Technologies.
-              </li>
-              <li>
-                Assisted in the setup of events around campus such as Career
-                Fair.
-              </li>
-              <li>Duration: Aug 2024 - Present</li>
-              <h3>Cliquify: Prompt Engineering Intern</h3>
-              <li>
-                Manipulated AI to produce optimized and efficient outputs for
-                hiring campaigns.
-              </li>
-              <li>Assessed outputs for human-like responses.</li>
-              <li>May 2024</li>
-              <h3>Surf Instructor at Ohana Surf School</h3>
-              <li>Taught children the fundamental skills of how to surf</li>
-              <li>Duration: May 2022 - Aug 2022</li>
-            </section>
-
-            <section class="bottom">
-              <h2>High School Extracurriculars and Interests</h2>
-              <h3>Cultural:</h3>
-              <ul>
-                <li>Grecian Odyssey Dancers</li>
-                <li>Greek Orthodox Youth Association (Treasurer)</li>
-              </ul>
-
-              <h3>Sports:</h3>
-              <ul>
-                <li>Space Coast Soccer</li>
-                <li>Varsity Cross Country</li>
-                <li>Varsity Track & Field</li>
-                <li>Surfing</li>
-                <li>Skiing</li>
-              </ul>
-
-              <h3>Clubs:</h3>
-              <ul>
-                <li>Fellowship of Christian Athletes (President)</li>
-                <li>Student Government (Sergeant of Arms)</li>
-                <li>National Honors Society</li>
-                <li>Key Club International</li>
-                <li>National Society of Leadership and Success</li>
-                <li>Faith Fellowship Youth Group (Leader in Training)</li>
-              </ul>
-
-              <h3>Music:</h3>
-              <ul>
-                <li>Space Coast Youth Symphony (Violin)</li>
-              </ul>
-            </section>
-          </div>
+           </div>
       </div>
+        </div>
+      </div>
+    </div>
+</div>
+    </br>
     </main>
-    <footer></footer>
-  </body>
+
+    <footer class="p-6" style="background-color: var(--hf); color: var(--hftxt)">
+      <p class="text-center">© 2024 Gianna Elena Fernandez. All rights reserved.</p>
+    </footer>
+  
+</body>
 </html>
