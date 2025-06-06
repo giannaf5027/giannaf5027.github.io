@@ -13,6 +13,8 @@
   --bhover: #0062ca;
   --shaddow: #bebebe;
   --dark-shaddow: #4d4d4d;
+  --tgrad: linear-gradient(180deg, #4386e9 0%, #38ccf9 100%);
+  --bgrad: linear-gradient(180deg, #38ccf9 0%, #4386e9 100%);
 }
 
 /* Dark mode variables */
@@ -142,7 +144,7 @@ header, footer{
 }
 
 header {
-  background-color: var(--hf);
+  background-image: var(--tgrad);
   color: var(--hftxt);
 }
 
@@ -152,7 +154,7 @@ header img {
 }
 
 footer {
-  background-color: var(--hf);
+  background-image: var(--bgrad);
   color: var(--hftxt);
   /* text-align: center;
   display: block;
