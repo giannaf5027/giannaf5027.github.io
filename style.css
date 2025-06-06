@@ -240,7 +240,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--hf);
+/*   background-color: var(--hf); */
   font-size: 20px;
 }
 
