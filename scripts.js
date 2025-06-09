@@ -1,10 +1,9 @@
 // videos on photos page
 
-//n
-
 document.addEventListener("DOMContentLoaded", () => {
   function initializeToggle() {
     const toggleSwitch = document.getElementById("modeToggle");
+    const cordString = document.querySelector('.cord-string');
     if (!toggleSwitch) {
       console.error("Toggle switch not found.");
       return;
@@ -17,6 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     toggleSwitch.addEventListener("change", () => {
+      // Cord pull animation
+      if (cordString) {
+        cordString.classList.remove('pulling');
+        // Force reflow for restart animation
+        void cordString.offsetWidth;
+        cordString.classList.add('pulling');
+      }
+
       if (toggleSwitch.checked) {
         document.body.classList.add("dark-mode");
         document.body.classList.remove("light-mode");
@@ -119,4 +126,60 @@ allvideos.forEach((vid) => {
     const video = vid.querySelector("video");
     video.muted = false;
   });
+});
+
+// Typing effect for homepage
+document.addEventListener("DOMContentLoaded", () => {
+  // Typing effect
+  const typingPhrases = [
+    "Hello! My name is Gianna Fernandez. I am studying Computer Engineering.",
+    "¡Hola! Me llamo Gianna Fernández. Estoy estudiando ingeniería informática.",
+    "¡Γειά σας! Mε λένε Γίαννα Φερνανδεζ. Σπουδάζω μηχανικός ιπολογιστών."
+  ];
+  const typingText = document.getElementById("typing-text");
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let typing = true;
+
+  if (typingText) {
+    // Remove all children
+    typingText.innerHTML = "";
+    // Create a text node and cursor
+    const textNode = document.createTextNode("");
+    const cursorSpan = document.createElement("span");
+    cursorSpan.className = "typing-cursor";
+    cursorSpan.textContent = "|";
+    typingText.appendChild(textNode);
+    typingText.appendChild(cursorSpan);
+
+    function type() {
+      if (!typingText) return;
+      if (typing) {
+        if (charIndex < typingPhrases[phraseIndex].length) {
+          textNode.textContent += typingPhrases[phraseIndex][charIndex];
+          charIndex++;
+          setTimeout(type, 80);
+        } else {
+          typing = false;
+          setTimeout(type, 1200);
+        }
+      } else {
+        if (charIndex > 0) {
+          textNode.textContent = typingPhrases[phraseIndex].slice(0, charIndex - 1);
+          charIndex--;
+          setTimeout(type, 40);
+        } else {
+          typing = true;
+          phraseIndex = (phraseIndex + 1) % typingPhrases.length;
+          setTimeout(type, 400);
+        }
+      }
+    }
+
+    type();
+    // Blinking cursor
+    setInterval(() => {
+      cursorSpan.style.opacity = cursorSpan.style.opacity === "0" ? "1" : "0";
+    }, 500);
+  }
 });
