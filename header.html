@@ -19,7 +19,26 @@
       <li>
         <div class="toggle-container">
           <input type="checkbox" id="modeToggle" />
-          <label for="modeToggle" class="toggle-label"></label>
+          <label for="modeToggle" class="lightbulb-toggle" title="Toggle light/dark mode">
+            <div class="bulb">
+              <div class="bulb-glass"></div>
+              <svg class="bulb-wiring" width="40" height="40" viewBox="0 0 40 40">
+                <polyline points="20,30 20,25 15,20 25,20 20,25" 
+                  fill="none" 
+                  stroke="#ffb300" 
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="wiring-path"
+                />
+              </svg>
+              <div class="bulb-base"></div>
+              <div class="bulb-cord">
+                <div class="cord-string"></div>
+                <div class="cord-knob"></div>
+              </div>
+            </div>
+          </label>
         </div>
       </li>
     </ul>
