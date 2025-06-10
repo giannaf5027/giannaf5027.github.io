@@ -1,5 +1,4 @@
-// videos on photos page
-
+// light and dark mode toggle
 document.addEventListener("DOMContentLoaded", () => {
   function initializeToggle() {
     const toggleSwitch = document.getElementById("modeToggle");
@@ -36,7 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  loadHTML("header", "header.html").then(initializeToggle);
+  // Load header and footer HTML
+  loadHTML("header", "header.html").then(() => {
+    initializeToggle();
+    initializeWaffleMenu();
+  });
   loadHTML("footer", "footer.html");
 });
 
@@ -183,3 +186,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
   }
 });
+
+// Waffle popup menu
+function initializeWaffleMenu() {
+  const waffleBtn = document.getElementById("waffleMenuBtn");
+  const wafflePopup = document.getElementById("wafflePopup");
+  const closeWaffle = document.getElementById("closeWaffle");
+
+  if (waffleBtn && wafflePopup && closeWaffle) {
+    waffleBtn.addEventListener("click", () => {
+      wafflePopup.classList.add("active");
+      waffleBtn.style.display = "none"; // Hide the waffle button
+    });
+    closeWaffle.addEventListener("click", () => {
+      wafflePopup.classList.remove("active");
+      waffleBtn.style.display = "flex"; // Show the waffle button again
+    });
+    // Optional: close popup when clicking outside nav
+    wafflePopup.addEventListener("click", (e) => {
+      if (e.target === wafflePopup) {
+        wafflePopup.classList.remove("active");
+        waffleBtn.style.display = "flex"; // Show the waffle button again
+      }
+    });
+  }
+}
+
+function handleResponsiveNavbar() {
+  const waffleBtn = document.getElementById("waffleMenuBtn");
+  const navbar = document.querySelector(".navbar");
+  const wafflePopup = document.getElementById("wafflePopup");
+
+  if (!waffleBtn || !navbar) return;
+
+  if (window.innerWidth <= 800) {
+    waffleBtn.style.display = "flex";
+    navbar.style.display = "none";
+    // Hide popup if resizing to desktop
+    if (wafflePopup) wafflePopup.classList.remove("active");
+  } else {
+    waffleBtn.style.display = "none";
+    navbar.style.display = "flex";
+    // Hide popup if resizing to desktop
+    if (wafflePopup) wafflePopup.classList.remove("active");
+  }
+}
+
+// Run on load and resize
+window.addEventListener("resize", handleResponsiveNavbar);
+document.addEventListener("DOMContentLoaded", handleResponsiveNavbar);
