@@ -61,6 +61,10 @@ header img {
 footer {
   background-image: var(--bgrad);
   color: var(--hftxt);
+  /* text-align: center;
+  display: block;
+  clear: both;
+  padding-bottom: 1px; */
 }
 
 main {
@@ -756,18 +760,18 @@ input[type="checkbox"]:checked + .toggle-label::before {
 /* Lightbulb Toggle */
 .lightbulb-toggle {
   display: flex;
-  align-items: center;
+  align-items: center;         /* Center vertically */
   justify-content: center;
   width: 60px;
-  height: 60px; 
+  height: 60px;                /* Match navbar height */
   cursor: pointer;
   position: relative;
   background: none;
   border: none;
-  margin-left: 0; 
+  margin-left: 0; /* Remove extra left margin */
   user-select: none;
   transform: scale(0.5);
-  transform-origin: center;
+  transform-origin: center;    /* Center scaling */
 }
 
 .lightbulb-toggle input[type="checkbox"] {
@@ -789,7 +793,7 @@ input[type="checkbox"]:checked + .toggle-label::before {
   height: 40px;
   background: #fffbe6;
   border-radius: 50% 50% 45% 45% / 60% 60% 100% 100%;
-  box-shadow: 0 0 0 2px #e2e2e2;
+  box-shadow: 0 0 0 2px #e2e2e2; /* Removed outer glow */
   position: absolute;
   top: 20px;
   left: 0;
@@ -837,14 +841,14 @@ input[type="checkbox"]:checked + .toggle-label::before {
 
 .cord-string {
   width: 2px;
-  height: 18px;
+  height: 18px; 
   background: #aaa;
   margin: 0 auto;
   transition: height 0.2s cubic-bezier(.4,2,.6,1), background 0.3s;
 }
 
 .cord-knob {
-  width: 8px;
+  width: 8px; 
   height: 8px;
   background: #e2c275;
   border-radius: 50%;
@@ -922,4 +926,91 @@ body.light-mode .cord-knob {
   display: flex;
   align-items: center;
   height: 60px;
+}
+
+.waffle-menu {
+  display: none;
+  background: none;
+  border: none;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  z-index: 2001;
+  cursor: pointer;
+}
+.waffle-menu span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 2px;
+  background: var(--hftxt, #333);
+  border-radius: 2px;
+}
+
+.waffle-popup {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 60, 100, 0.97);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.waffle-popup.active {
+  display: flex;
+}
+
+.waffle-close {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 3100;
+}
+
+.waffle-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.waffle-nav a {
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.waffle-nav a:hover {
+  color: var(--title, #ffe066);
+}
+
+/* Responsive: Always show waffle menu and popup full screen on mobile */
+@media (max-width: 800px) {
+  .waffle-menu {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    left: auto;
+    z-index: 3100;
+  }
 }
