@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gianna Elena Fernandez" />
+    <meta name="keywords" content="projects, Gianna Fernandez, Gianna Elena Fernandez, Gianna E. Fernandez, computer engineering, AI, data science, coding, github, computer science resume, software engineering, personal projects" />
+    <meta name="description" content="Personal portfolio of Gianna Fernandez">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="scripts.js" defer></script>
     <title>Projects</title>
@@ -42,7 +46,8 @@
             <h2>E-Portfolio</h2>
             <p>
               This is a project that I coded from scratch. Please click the link
-              below to view the repository.
+              below to view the repository. Feel free to explore the rest of my website, 
+              and try and find my hidden game!
             </p>
             <div class="container">
               <a
@@ -53,36 +58,40 @@
               >
                 <button class="button">View Project</button>
               </a>
+              <a href="javascript:void(0);" class="button-link" title="Play Snake Game">
+                <button id="openSnakeBtn" class="button">Play Snake Game</button>
+              </a>
             </div>
           </div>
           <div class="projects__img projects__item">
-            <img src="content/Images/logo.png" class="experience-image" />
+            <a href="javascript:void(0);" class="button-link" title="Play Snake Game">
+              <img src="content/Images/logo.png" id="snakeLogoTrigger" class="experience-image" style="cursor:pointer;"/>
+            </a>
           </div>
           <div class="projects__img projects__item">
-            <img src="content/Images/osc.png" class="experience-image" />
+            <img src="content/Images/osc.png" class="experience-image"/>
           </div>
           <div class="projects__txt projects__item">
             <h2>Sign in Page</h2>
             <p>
               This is another project that I worked on with Open
-              Source Club that I am the tech lead for. It is a largescale sign in page for clubs to use to take roll, 
-              and allows users to spend and earn a fake currency in minigames.
+              Source Club that I am the tech lead for. It is a largescale sign in page for clubs to use to take roll, and allows users to spend and earn a fake currency in minigames.
             </p>
-            <div class="container">
+            <!-- <div class="container">
               <a
-                href="https://github.com/ufosc/Club-Manager"
+                href="https://www.bytesoflove.net/"
                 target="_blank"
                 class="button-link"
                 title="Sign In Page"
               >
                 <button class="button">View Project</button>
               </a>
-            </div>
+            </div> -->
           </div>
-        <div class="projects__txt projects__item">
+          <div class="projects__txt projects__item">
             <h2>Just Stop</h2>
             <p>
-              This is a collaborative project that I coded with some friends as a submission to Swamphacks X. 
+              This is a collaborative project that I coded with some friends as a submission to Swamphacks. 
               Its main focus is to show how a panic attack can feel like, and the way to beat it. 
               Please click the link below to view the repository.
             </p>
@@ -106,3 +115,12 @@
     <footer></footer>
   </body>
 </html>
+
+<style>
+.container {
+  display: flex;
+  gap: 16px; 
+  align-items: center;
+}
+</style>
+

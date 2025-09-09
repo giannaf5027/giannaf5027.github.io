@@ -1,4 +1,5 @@
-<footer style="background-color: var(--hf); color: var(--hftxt); text-align: center;">
+<script src="scripts.js" defer></script>
+<footer>
     <hr>
     <h3>Contact</h3>
     giannaef27@gmail.com<br>
@@ -13,7 +14,28 @@
             <a href="mailto:giannaef27@gmail.com" class="social-button social-button--email">
                 <i class="fas fa-envelope"></i>
             </a>
+            <a href="https://www.credly.com/users/gef5027/" target="_blank" class="social-button social-button--badges">
+                <i class="fas fa-certificate"></i>
+            </a>
         </div>
     </div>
     <p style="text-align: left; margin-left: 2%;">&copy; 2024 All rights reserved</p>
 </footer>
+
+<!-- Chatbot Button and Popup -->
+<div id="chatbot-container">
+  <button id="chatbot-btn" aria-label="Open chatbot">
+    <i class="fas fa-comments"></i>
+  </button>
+  <div id="chatbot-popup">
+    <div id="chatbot-header">
+      <span>Ask Gianna's Bot</span>
+      <button id="chatbot-close" aria-label="Close chatbot">&times;</button>
+    </div>
+    <div id="chatbot-messages"></div>
+    <form id="chatbot-form">
+      <input type="text" id="chatbot-input" placeholder="Ask me anything..." autocomplete="off" />
+      <button type="submit"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+</div>

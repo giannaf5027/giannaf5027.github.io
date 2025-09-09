@@ -1,6 +1,9 @@
 /* Define variables for light mode */
 :root {
   --switch-bg: #f5f5f6;
+  --chat-bg: #f5f5f6;
+  --chat-txt: #111f7a;
+  --chat-gr: linear-gradient(180deg, #6ee2e0 0%, #38ccf9 100%);
   --title: #44dbb5;
   --text: #255fb6;
   --body: #008aca;
@@ -20,6 +23,9 @@
 /* Dark mode variables */
 .dark-mode {
   --switch-bg: #353b49;
+  --chat-bg: #474f62;
+  --chat-txt: #c0d4e6;
+  --chat-gr: linear-gradient(180deg, #3cabcd 0%, #2c69c5 100%);
   --title: #5cd6b7;
   --text: #39a8dc;
   --body: #77dcf8;
@@ -61,10 +67,6 @@ header img {
 footer {
   background-image: var(--bgrad);
   color: var(--hftxt);
-  /* text-align: center;
-  display: block;
-  clear: both;
-  padding-bottom: 1px; */
 }
 
 main {
@@ -96,7 +98,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: var(--hf); */
   font-size: 20px;
 }
 
@@ -992,7 +993,7 @@ body.light-mode .cord-knob {
 }
 
 .waffle-nav a {
-  color: #fff;
+  color: var(switch-bg, #f5f5f6);
   font-size: 2rem;
   text-decoration: none;
   font-weight: bold;
@@ -1013,4 +1014,279 @@ body.light-mode .cord-knob {
     left: auto;
     z-index: 3100;
   }
+}
+
+/*chatbot*/
+#chatbot-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 4000;
+}
+
+#chatbot-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--title);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 16px var(--shaddow);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#chatbot-popup {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 320px;
+  max-width: 90vw;
+  background: var(--switch-bg);
+  color: var(--shaddow);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--dark-shaddow);
+  overflow: hidden;
+  z-index: 4100;
+}
+
+#chatbot-popup.active {
+  display: flex;
+}
+
+#chatbot-header {
+  background: var(--title);
+  color: #fff;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+#chatbot-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#chatbot-messages {
+  padding: 16px;
+  height: 220px;
+  overflow-y: auto;
+  background: var(--chat-gr);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatbot-message {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* User message bubble */
+.chatbot-message.user {
+  align-self: flex-end;
+  background: var(--body);
+  color: var(--back);
+  padding: 10px 16px;
+  border-radius: 18px 18px 4px 18px;
+  margin-bottom: 8px;
+  max-width: 75%;
+  box-shadow: 0 2px 8px var(--dark-shaddow);
+  text-align: left;
+  word-break: break-word;
+}
+
+/* Bot message bubble */
+.chatbot-message.bot {
+  align-self: flex-start;
+  background: var(--switch-bg);
+  color: var(--chat-txt);
+  padding: 10px 16px;
+  border-radius: 18px 18px 18px 4px;
+  margin-bottom: 8px;
+  max-width: 75%;
+  box-shadow: 0 2px 8px var(--dark-shaddow);
+  text-align: left;
+  word-break: break-word;
+  border: 1px solid var(--title);
+}
+
+/* Ensure the messages area is a flex column */
+#chatbot-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#chatbot-form {
+  display: flex;
+  border-top: 1px solid var(--shaddow);
+  background-image: var(--chat-gr);
+}
+
+#chatbot-input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  outline: none;
+  background: var(--switch-bg);
+  color: var(--chat-txt);
+}
+
+#chatbot-input::placeholder {
+  color: var(--chat-txt);
+  opacity: 1;
+}
+
+#chatbot-form button {
+  background: var(--title);
+  color: #fff;
+  border: none;
+  padding: 0 18px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 0 0 16px 0;
+  transition: background 0.2s;
+}
+
+#chatbot-form button:hover {
+  background: var(--support);
+}
+
+#chatbot-messages::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+#chatbot-messages::-webkit-scrollbar-thumb {
+  background: var(--title);
+  border-radius: 6px;
+}
+
+#chatbot-messages::-webkit-scrollbar-thumb:hover {
+  background: var(--support);
+}
+
+/* For Firefox */
+#chatbot-messages {
+  scrollbar-width: thin;
+  scrollbar-color: var(--title) transparent;
+}
+
+/* Section transitions and animations */
+html {
+  scroll-behavior: smooth;
+}
+
+.reflection-section {
+  padding: 60px 20px;
+  background-color: var(--switch-bg);
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.reflection-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reflection-section h2 {
+  font-size: 30px;
+  color: var(--title);
+  margin-bottom: 20px;
+}
+
+.reflection-section p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Gallery layout */
+.reflection-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: var(--chat-bg);
+}
+
+.reflection-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shaddow);
+  transition: transform 0.3s ease;
+}
+
+.reflection-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Snake Game Section */
+.snake-game-section {
+  margin: 40px auto;
+  text-align: center;
+  background: var(--chat-gr);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px var(--shaddow);
+  padding: 24px;
+  max-width: 800px;
+}
+
+#snakeCanvas {
+  border: 2px solid var(--title);
+  background: var(--switch-bg);
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+/* Snake Game Modal */
+.snake-modal {
+  display: none;
+  position: fixed;
+  z-index: 5000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.snake-modal.active {
+  display: flex;
+}
+
+.snake-modal-content {
+  background: var(--chat-gr, #fff);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px var(--dark-shaddow, #333);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.snake-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10;
 }
