@@ -74,7 +74,13 @@
 <div id="snakeModal" class="snake-modal">
   <div class="snake-modal-content">
     <span id="closeSnakeBtn" class="snake-close">&times;</span>
-    <canvas id="snakeCanvas" width="720" height="480"></canvas>
+    <canvas id="snakeCanvas" width="720" height="480" style="width: 100%;"></canvas>
     <button id="snakePlayAgainBtn" class="button" style="display:none; margin-top:16px;">Play Again</button>
+    <div id="mobileControls" style="text-align:center; margin-top: 10px;">
+      <button class="arr up" onclick="setMobileDirection('UP')"><div></div></button><br>
+      <button class="arr left" onclick="setMobileDirection('LEFT')"><div></div></button>
+      <button class="arr down" onclick="setMobileDirection('DOWN')"><div></div></button>
+      <button class="arr right" onclick="setMobileDirection('RIGHT')"><div></div></button>
+    </div>
   </div>
 </div>

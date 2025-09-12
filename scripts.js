@@ -133,7 +133,7 @@ allvideos.forEach((vid) => {
   });
 
 // Load header and footer HTML
-Promise.all([
+Promise.all([                                                                                                                                                                                                                                                                                                                                                                                                             
   loadHTML("header", "header.html"),
   loadHTML("footer", "footer.html")
 ]).then(() => {
@@ -401,6 +401,14 @@ Promise.all([
       }
     });
 
+    // Expose setter for mobile controls
+    window.setSnakeDirection = function(dir) {
+      if (dir === 'LEFT' && curDirection !== 'RIGHT') newDirection = 'LEFT';
+      if (dir === 'RIGHT' && curDirection !== 'LEFT') newDirection = 'RIGHT';
+      if (dir === 'UP' && curDirection !== 'DOWN') newDirection = 'UP';
+      if (dir === 'DOWN' && curDirection !== 'UP') newDirection = 'DOWN';
+    };
+
     function draw() {
       ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--switch-bg') || '#f5f5f6';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -569,4 +577,40 @@ Promise.all([
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
+
+  function initializeWaffleMenu() {
+    const waffleBtn = document.getElementById("waffleMenuBtn");
+    const wafflePopup = document.getElementById("wafflePopup");
+    const closeWaffle = document.getElementById("closeWaffle");
+
+    if (waffleBtn && wafflePopup) {
+      waffleBtn.addEventListener("click", function() {
+        wafflePopup.classList.add("active");
+        waffleBtn.style.display = "none"; // Hide waffle button when menu is open
+      });
+    }
+    if (closeWaffle && wafflePopup && waffleBtn) {
+      closeWaffle.addEventListener("click", function() {
+        wafflePopup.classList.remove("active");
+        waffleBtn.style.display = "flex"; // Show waffle button when menu is closed
+      });
+      // Close when clicking outside the menu
+      wafflePopup.addEventListener("click", function(e) {
+        if (e.target === wafflePopup) {
+          wafflePopup.classList.remove("active");
+          waffleBtn.style.display = "flex"; // Show waffle button when menu is closed
+        }
+      });
+    }
+  }
 });
+
+// Add this function globally
+window.setMobileDirection = function(dir) {
+  // Only allow valid direction changes
+  if (typeof window.setSnakeDirection === "function") {
+    window.setSnakeDirection(dir);
+  } else if (window._setSnakeDirection) {
+    window._setSnakeDirection(dir);
+  }
+};

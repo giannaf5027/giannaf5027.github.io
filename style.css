@@ -929,6 +929,7 @@ body.light-mode .cord-knob {
   height: 60px;
 }
 
+/* Waffle Menu for Mobile */
 .waffle-menu {
   display: none;
   background: none;
@@ -979,7 +980,7 @@ body.light-mode .cord-knob {
   right: 24px;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--hftxt);
   font-size: 3rem;
   cursor: pointer;
   z-index: 3100;
@@ -993,7 +994,7 @@ body.light-mode .cord-knob {
 }
 
 .waffle-nav a {
-  color: var(switch-bg, #f5f5f6);
+  color: var(--hftxt);
   font-size: 2rem;
   text-decoration: none;
   font-weight: bold;
@@ -1001,7 +1002,7 @@ body.light-mode .cord-knob {
 }
 
 .waffle-nav a:hover {
-  color: var(--title, #ffe066);
+  color: var(--title);
 }
 
 /* Responsive: Always show waffle menu and popup full screen on mobile */
@@ -1013,6 +1014,9 @@ body.light-mode .cord-knob {
     right: 20px;
     left: auto;
     z-index: 3100;
+  }
+  .navbar {
+    display: none !important;
   }
 }
 
@@ -1289,4 +1293,42 @@ html {
   cursor: pointer;
   font-weight: bold;
   z-index: 10;
+}
+
+/* Mobile Controls for Snake Game */
+.arr{
+  position: relative;
+  background: var(--hftxt);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin: 15px;
+  transition: 0.4s ease;
+}
+
+.arr:hover{
+  box-shadow: 0 4px 16px var(--dark-shaddow);
+}
+
+.arr div{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-top: 8px solid var(--hf);
+  border-left: 8px solid var(--hf);
+  transform: rotate(45deg);
+  left: 27.5px;
+  top: 35px;
+}
+
+.right {
+  transform: rotate(90deg);
+}
+
+.down {
+  transform: rotate(180deg);
+}
+
+.left {
+  transform: rotate(-90deg);
 }
