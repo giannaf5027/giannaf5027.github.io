@@ -238,6 +238,9 @@ input[type="checkbox"]:checked + .toggle-label::before {
   text-align: center;
   overflow: hidden;
   text-decoration: none;
+  padding: 12px 16px;
+  font-size: 18px;
+  min-height: 44px;
 }
 .button:hover {
   background-color: var(--bhover);
@@ -466,10 +469,59 @@ input[type="checkbox"]:checked + .toggle-label::before {
   filter: drop-shadow(0px 8px 10px var(--dark-shaddow));
 }
 
-.projects h2,
-.projects p {
+.projects h2 {
   margin: 0;
+  color: var(--title);
+  font-size: 1.75rem;
 }
+
+@media screen and (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+  }
+
+  .projects__item {
+    flex: 1 100%;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .projects__txt {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .projects__img img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button {
+    width: 90%;
+    max-width: none;
+    font-size: 16px;
+  }
+
+  .projects h2 {
+    font-size: 1.5rem;
+  }
+
+  .projects p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .format {
+    padding: 0 10px;
+  }
+}
+
 
 /* resume page */
 

@@ -347,6 +347,7 @@ Promise.all([
         if (input.includes("dance")) return "I love cultural dancing! I perform both Greek and Cuban dances.";
         if (input.includes("favorite") || input.includes("like") || input.includes("hobbies") || input.includes("interests")) return "I love coding, dancing, and learning about different cultures!";
         if (input.includes("favorite food") || input.includes("food")) return "I love Greek and Cuban cuisine! Moussaka and Ropa Vieja are two of my favorites.";
+        if (input.includes("hobby") || input.includes("hobbies")) return "My hobbies include coding, dancing, exploring new cultures, and traveling.";
         // other
         if (input.includes("hello") || input.includes("hi") || input.includes("hey")) return "Hello! How can I help you learn more about me?";
         return "I'm happy to answer questions about my background, experiences, or time abroad. Try asking about my studies, clubs, or travels!";
@@ -358,7 +359,7 @@ Promise.all([
   function startSnakeGame() {
     const canvas = document.getElementById('snakeCanvas');
     const ctx = canvas.getContext('2d');
-    const box = 20;
+    const box = 30;
     let snake = [{ x: 9 * box, y: 12 * box }];
     let curDirection = 'RIGHT';
     let newDirection = curDirection;
@@ -374,6 +375,11 @@ Promise.all([
       "content/Images/logo.png",
       "content/Images/osc.png",
       "content/Images/Just_Stop.png",
+      "content/Images/t_logo.png",
+      "content/Images/mythos_logo.png",
+      "content/Images/cq_logo.png",
+      "content/Images/fg_logo.png",
+      "🇺🇸",
       "🇨🇺",
       "🇬🇷",
       "🇪🇸",
