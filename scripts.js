@@ -199,7 +199,7 @@ Promise.all([
           if (charIndex < typingPhrases[phraseIndex].length) {
             textNode.textContent += typingPhrases[phraseIndex][charIndex];
             charIndex++;
-            setTimeout(type, 80);
+            setTimeout(type, 40);
           } else {
             typing = false;
             setTimeout(type, 1200);
