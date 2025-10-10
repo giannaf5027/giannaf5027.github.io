@@ -379,10 +379,11 @@ Promise.all([
       "content/Images/mythos_logo.png",
       "content/Images/cq_logo.png",
       "content/Images/fg_logo.png",
-      "🇺🇸",
-      "🇨🇺",
-      "🇬🇷",
-      "🇪🇸",
+      "content/Images/gl-logo.png",
+      // "🇺🇸",
+      // "🇨🇺",
+      // "🇬🇷",
+      // "🇪🇸",
     ];
     shuffleArray(fruitImages); // Randomize fruit order
 
