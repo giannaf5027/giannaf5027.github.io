@@ -295,7 +295,7 @@ Promise.all([
       }
 
 //review before push
-
+// check the bug with the wsad keys not working bc of game....
       function getBotResponse(input) {
         input = input.toLowerCase();
         // about me
@@ -303,11 +303,11 @@ Promise.all([
         if (input.includes("about me") || input.includes("who are you")) return "I'm Gianna Fernandez, a Computer Engineering student at the University of Florida with a passion for coding, dance, and cultural exploration!";
         if (input.includes("hometown") || input.includes("from")) return "I'm originally from Miami, Florida, but moved to Melbourne, Florida in middle school. Feel free to read more about my background on the About Me page!";
         if (input.includes("age") || input.includes("old")) return "I'm 20 years old.";
-        if (input.includes("family") || input.includes("background")) return "I come from a multicultural background with Cuban and Greek heritage, which has greatly influenced my interests and activities.";
+        if (input.includes("family") || input.includes("background")||input.includes("ethnicity")) return "I come from a multicultural background with Cuban and Greek heritage, which has greatly influenced my interests and activities.";
         // academics
         if (input.includes("major") || input.includes("study")) return "I'm majoring in Computer Engineering and minoring in Sales Engineering at the University of Florida.";
         if (input.includes("minor")) return "I'm pursuing a minor in Sales Engineering to complement my Computer Engineering major.";
-        if (input.includes("why computer engineering") || input.includes("why ce") || input.includes("why cpe")) return "I chose Computer Engineering because I love problem-solving and creating technology that can make a difference in people's lives.";
+        if (input.includes(("why") && (("computer engineering") || ("cpe") || ("ce"))) || input.includes(("why") && ("ce")) || input.includes(("why") && ("cpe"))) return "I chose Computer Engineering because I love problem-solving and creating technology that can make a difference in people's lives.";
         if (input.includes("uf") || input.includes("university of florida")) return "I'm studying at the University of Florida, where I'm majoring in Computer Engineering and minoring in Sales Engineering. I am also getting a certificate in Artificial Intelligence.";
         if (input.includes("graduation") || input.includes("graduate")) return "I plan to graduate in Spring 2027 with a degree in Computer Engineering and a minor in Sales Engineering.";
         if (input.includes("ai ") || input.includes("artificial intelligence") || input.includes("certificate")) return "I'm interested in AI, and am pursuing UF’s Artificial Intelligence Certificate!";
@@ -349,7 +349,10 @@ Promise.all([
         if (input.includes("favorite food") || input.includes("food")) return "I love Greek and Cuban cuisine! Moussaka and Ropa Vieja are two of my favorites.";
         if (input.includes("hobby") || input.includes("hobbies")) return "My hobbies include coding, dancing, exploring new cultures, and traveling.";
         // other
-        if (input.includes("hello") || input.includes("hi") || input.includes("hey")) return "Hello! How can I help you learn more about me?";
+        if (input.includes("hello") || input.includes("hi") || input.includes("hey") || input.includes("greetings") || input.includes("hola")) return "Hello! How can I help you learn more about me?";
+        if (input.includes("bye") || input.includes("goodbye") || input.includes("adios")) return "Goodbye! Have a great day!";
+        if (input.includes("help") || input.includes("assist")) return "I'm here to help! Ask me anything about my background, projects, or interests.";
+        if (input.includes("thank you") || input.includes("thanks") || input.includes(" ty")) return "You're welcome! Feel free to ask me anything else.";
         return "I'm happy to answer questions about my background, experiences, or time abroad. Try asking about my studies, clubs, or travels!";
       }
     }
@@ -380,10 +383,7 @@ Promise.all([
       "content/Images/cq_logo.png",
       "content/Images/fg_logo.png",
       "content/Images/gl-logo.png",
-      // "🇺🇸",
-      // "🇨🇺",
-      // "🇬🇷",
-      // "🇪🇸",
+      "content/Images/gatorGabber.png",
     ];
     shuffleArray(fruitImages); // Randomize fruit order
 
