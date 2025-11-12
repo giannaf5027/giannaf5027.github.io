@@ -1,0 +1,205 @@
+/* Projects page specific styles: cards, grid, modal, filters */
+:root {
+  --switch-bg: #f5f5f6;
+  --chat-bg: #f5f5f6;
+  --chat-txt: #111f7a;
+  --chat-gr: linear-gradient(180deg, #6ee2e0 0%, #38ccf9 100%);
+  --title: #44dbb5;
+  --text: #255fb6;
+  --body: #008aca;
+  --back: white;
+  --support: #3bb2e9;
+  --hyperlinks: #002fff;
+  --hf: #31b3f0;
+  --hftxt: white;
+  --hfhover: #0092d6;
+  --bhover: #0062ca;
+  --shaddow: #bebebe;
+  --dark-shaddow: #4d4d4d;
+  --tgrad: linear-gradient(180deg, #4386e9 0%, #38ccf9 100%);
+  --bgrad: linear-gradient(180deg, #38ccf9 0%, #4386e9 100%);
+  --card-bg: #ffffff;
+  --card-border: #e6eef9;
+  --card-shadow: #979797;
+  --light: rgba(137, 188, 255, 0.06);
+  --dark: rgba(100, 255, 242, 0.267);
+}
+
+/* Dark mode variables */
+.dark-mode {
+  --switch-bg: #353b49;
+  --chat-bg: #474f62;
+  --chat-txt: #c0d4e6;
+  --chat-gr: linear-gradient(180deg, #3cabcd 0%, #2c69c5 100%);
+  --title: #5cd6b7;
+  --text: #39a8dc;
+  --body: #77dcf8;
+  --back: #2e3440;
+  --support: #8bdaf3;
+  --hyperlinks: #8183ff;
+  --hf: #1f55a6;
+  --hftxt: #ffffff;
+  --hfhover: #0083c0;
+  --bhover: #0056b3;
+  --shaddow: #303030;
+  --dark-shaddow: #0a0a0a;
+  --card-bg: #353b49;
+  --card-border: #474f62;
+  --card-shaddow: #595c5f;
+  --dark-shaddow: #0a0a0a;
+  --light: rgba(9, 99, 216, 0.148);
+  --dark: rgba(56, 249, 226, 0.119);
+}
+
+/* Letters animation canvas styling */
+.letters-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.binary-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projects-controls{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  margin: 1rem 0;
+  flex-wrap:wrap;
+}
+.filters{
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+}
+.filter-btn{
+  background:var(--switch-bg);
+  color:var(--text);
+  border:1px solid rgba(0,0,0,0.06);
+  padding:6px 10px;
+  border-radius:999px;
+  box-shadow: 0 1px 2px var(--dark-shaddow);
+  cursor:pointer;
+  font-size:0.9rem;
+}
+.filter-btn.active{ background: var(--title); color:#fff; border-color:transparent;}
+.search-wrap{ position:relative; }
+.search-wrap::before{
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:0.95rem;
+  opacity:0.6;
+  pointer-events:none;
+}
+.search-wrap input[type="search"]{
+  padding:10px 14px 10px;
+  border-radius:999px;
+  border:1px solid var(--shaddow);
+  min-width:220px;
+  background: var(--switch-bg);
+  color: var(--text);
+  box-shadow: 0 1px 2px var(--dark-shaddow);
+  transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
+}
+.search-wrap input[type="search"]:focus{
+  outline: none;
+  border-color: var(--title);
+  box-shadow: 0 8px 30px rgba(34,99,190,0.08);
+  transform: translateY(-1px);
+}
+
+.search-wrap input::placeholder {
+  color: var(--chat-txt);
+  opacity: 1;
+}
+
+@media screen and (max-width:700px){
+  .search-wrap{ width:100%; }
+  .search-wrap input[type="search"]{ width:100%; min-width:0; }
+}
+
+.projects-grid{
+  display:grid;
+  /* fixed column width so cards keep their size when fewer columns are present */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 260px));
+  gap:1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem; /* Add space at bottom to prevent footer from jumping */
+  min-height: 60vh; /* Ensure minimum height even with few results */
+  justify-content: center; /* center columns when there's leftover space */
+}
+.project-card{
+  background:var(--card-bg);
+  border-radius:12px;
+  border:3px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+  width: 260px; /* fixed card width matching the grid column */
+  aspect-ratio: 3 / 4; /* keep consistent height-to-width ratio */
+}
+
+.project-card:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(35,63,125,0.12); }
+.project-card .thumb{ width:100%; height:160px; object-fit:contain; display:block; background: linear-gradient(135deg, var(--light), var(--dark)); padding:12px; }
+.project-card .card-body{ padding:12px 14px; flex:1 1 auto; display:flex; flex-direction:column; }
+.project-title{ font-size:1.05rem; color:var(--title); margin:0 0 8px 0; }
+.project-excerpt{ color:var(--text); font-size:0.95rem; margin:0 0 12px 0; flex:1 1 auto; }
+.card-footer{ display:flex; gap:8px; align-items:center; justify-content:flex-start; }
+.card-link{ background:var(--body); color:var(--back); padding:8px 10px; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem }
+.tag-pill{ background: linear-gradient(90deg, rgba(68,219,181,1) 0%, rgba(0,138,202,1) 100%); padding:6px 8px; border-radius:999px; font-size:0.8rem; color: #fff; font-weight:600; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+
+/* Modal styles */
+.project-modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.45); opacity:0; pointer-events:none; transition:opacity .18s ease; z-index:6000 }
+.project-modal[aria-hidden="false"]{ opacity:1; pointer-events:auto; }
+.project-modal-content{ position:relative; background:var(--switch-bg); width:clamp(320px, 80%, 1000px); max-height:90vh; overflow:auto; border-radius:12px; padding:18px; box-shadow:0 20px 60px rgba(20,40,80,0.2); }
+.modal-close{ position:absolute; right:14px; top:12px; background:rgba(0,0,0,0.06); border:none; font-size:26px; color:var(--text); cursor:pointer; width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:999px; z-index:30; }
+.modal-body{ display:flex; gap:16px; align-items:flex-start; }
+.modal-body img{ width:320px; max-width:38%; border-radius:8px; object-fit:cover }
+.modal-text{ flex:1 1 auto }
+.modal-text h2{ margin-top:0; color:var(--title) }
+.modal-links{ margin-top:12px; display:flex; gap:10px; flex-wrap:wrap }
+.modal-links a{ display:inline-block; background:var(--body); color:var(--back); padding:8px 12px; border-radius:8px; text-decoration:none }
+.modal-tags{ margin-top:12px; display:flex; gap:8px; flex-wrap:wrap }
+
+/* modal navigation arrows */
+.project-modal-content .modal-nav{ position:absolute; top:50%; transform:translateY(-50%); border:none; background:rgba(255,255,255,0.9); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,0.12); cursor:pointer }
+.project-modal-content .modal-nav.prev{ left:8px }
+.project-modal-content .modal-nav.next{ right:8px }
+.project-modal-content .modal-nav:hover{ transform: translateY(-50%) scale(1.05) }
+
+@media screen and (max-width:700px){
+  .modal-body{ flex-direction:column }
+  .modal-body img{ max-width:100%; width:100%; }
+  .project-card .thumb{ height:140px }
+  .modal-close{ right:10px; top:10px; }
+  /* On small screens, let cards be full width for better readability */
+  .projects-grid{ grid-template-columns: 1fr; }
+  .project-card{ width:100%; aspect-ratio: auto; }
+}
+
+/* small niceties */
+.empty-state{ 
+  text-align: center; 
+  padding: 48px; 
+  color: var(--text);
+  font-size: 1.2rem;
+  background: var(--switch-bg);
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+/* keep projects.css small and focused; relies on main style.css variables */
