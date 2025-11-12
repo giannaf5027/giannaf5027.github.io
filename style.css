@@ -73,11 +73,25 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative; /* anchor absolute letters wrapper inside main */
 }
 
 .format {
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2; /* sit above the letters canvas wrapper */
+}
+
+/* Letters animation canvas: place behind content in the .format container */
+.format { position: relative; }
+.letters-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; display: block; }
+.letters-wrapper { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.about { position: relative; z-index: 3; }
+
+/* Hide the decorative letters canvas on small screens for readability and performance */
+@media screen and (max-width: 600px) {
+  .letters-canvas { display: none !important; }
 }
 
 .format2 {
@@ -1415,11 +1429,39 @@ html {
   position: absolute;
   top: 12px;
   right: 18px;
-  font-size: 2rem;
-  color: #fff;
+  font-size: 1.25rem;
+  color: var(--hftxt);
   cursor: pointer;
   font-weight: bold;
-  z-index: 10;
+  z-index: 1200;
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  background: rgba(0,0,0,0.18);
+  backdrop-filter: blur(2px);
+  border: none;
+}
+
+/* Mobile snake control grid: keeps arrows in fixed positions on small screens */
+@media screen and (max-width:700px){
+  #mobileControls{
+    display: grid;
+    grid-template-columns: 64px 64px 64px;
+    grid-template-rows: 64px 64px;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 0;
+  }
+  #mobileControls .up{ grid-column: 2; grid-row: 1; }
+  #mobileControls .left{ grid-column: 1; grid-row: 2; }
+  #mobileControls .down{ grid-column: 2; grid-row: 2; }
+  #mobileControls .right{ grid-column: 3; grid-row: 2; }
+  #mobileControls .arr{ width:64px; height:64px; margin:0; }
+  #mobileControls .arr div{ left: 17px; top: 19px; height: 18px; width: 18px; border-top:6px solid var(--hf); border-left:6px solid var(--hf); }
 }
 
 /* Mobile Controls for Snake Game */
