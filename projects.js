@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
       excerpt: 'AI chatbot for practicing Spanish conversation (GatorHacks).',
   description: `An AI-powered chatbot built for GatorHacks 2025 to help UF students practice Spanish conversation with NLP-driven feedback. Click the link below to try the live site and explore the NLP pipeline and dataset examples.`,
   longDescription: `An AI-powered chatbot prototype created for GatorHacks 2025 to help students practice Spanish conversation. Includes an NLP pipeline for intent recognition, feedback mechanisms for pronunciation and grammar, and anonymized example datasets. Deployed as a demo with links to the research notes and code.`,
-      links: [{label:'Live', href:'https://gatorgabber.vercel.app/'}],
+      links: [{label:'Live', href:'https://gatorgabber.vercel.app/'}, {label:'Instagram', href: 'https://www.instagram.com/p/DRCawBdjfin/'}],
       tags: ['Hackathon','AI']
     }
   ];
