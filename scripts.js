@@ -384,6 +384,7 @@ Promise.all([
       "content/Images/fg_logo.png",
       "content/Images/gl-logo.png",
       "content/Images/gatorGabber.png",
+      "content/Images/anthizo.png",
     ];
     shuffleArray(fruitImages); // Randomize fruit order
 

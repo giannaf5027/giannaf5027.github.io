@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   longDescription: `A fully responsive personal portfolio website built from scratch using HTML, CSS, and JavaScript. Features interactive elements including a dark/light mode toggle, an embedded Snake game, dynamic content sections, and progressive enhancement for accessibility. The codebase demonstrates layout, responsive patterns, and small web games integrated seamlessly into a personal site. Repository link included for code review.`,
       links: [
         {label:'Repo', href:'https://github.com/giannaf5027/giannaf5027.github.io'}, 
-        {label:'Snake Game', href:'#', onclick: 'openSnakeModal(); return false;'}
+        // {label:'Snake Game', href:'#', onclick: 'openSnakeModal(); return false;'}
       ],
       tags: ['Web','Portfolio', 'AI']
     },
@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'content/Images/Just_Stop.png',
       excerpt: 'Interactive awareness app that simulates panic attacks and coping strategies.',
   description: `An immersive web application developed for Swamphacks that simulates and raises awareness about panic attacks. Combines interactive elements with mental health education. Please click the link below to view the repository for implementation details and source.`,
-  longDescription: `An immersive web application developed for Swamphacks that simulates and raises awareness about panic attacks. Combines guided interactive scenarios with coping strategies and educational material. The project emphasizes empathy-driven design, clear content warnings, and resources for users seeking help.`,
-      links: [{label:'Repo', href:'https://github.com/Srsi3/RetroGames'}],
+  longDescription: `An immersive web application developed for Swamphacks that simulates and raises awareness about panic attacks. Combines both hardware and software for guided interactive scenarios with coping strategies and educational material. The project emphasizes empathy-driven design, clear content warnings, and resources for users seeking help.`,
+      links: [{label:'Repo', href:'https://github.com/Srsi3/RetroGames'}, {label:'Devpost', href:'https://devpost.com/software/just-stop'}],
       tags: ['Hackathon','Awareness']
     },
     {
@@ -100,9 +100,19 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'content/Images/gatorGabber.png',
       excerpt: 'AI chatbot for practicing Spanish conversation (GatorHacks).',
   description: `An AI-powered chatbot built for GatorHacks 2025 to help UF students practice Spanish conversation with NLP-driven feedback. Click the link below to try the live site and explore the NLP pipeline and dataset examples.`,
-  longDescription: `An AI-powered chatbot prototype created for GatorHacks 2025 to help students practice Spanish conversation. Includes an NLP pipeline for intent recognition, feedback mechanisms for pronunciation and grammar, and anonymized example datasets. Deployed as a demo with links to the research notes and code.`,
+  longDescription: `An AI-powered chatbot prototype created for GatorHacks 2025 to help students practice Spanish conversation. Includes an NLP pipeline for intent recognition, feedback mechanisms for pronunciation and grammar, and anonymized example datasets. Deployed as a demo with links to the code.`,
       links: [{label:'Live', href:'https://gatorgabber.vercel.app/'}, {label:'Instagram', href: 'https://www.instagram.com/p/DRCawBdjfin/'}],
       tags: ['Hackathon','AI', 'Education']
+    },
+    {
+      id: 'anthizo',
+      title: 'Anthizo',
+      image: 'content/Images/anthizo.png',
+      excerpt: 'Job application tracker (SwampHacks).',
+  description: `A job application tracker developed for SwampHacks 2026 to help users manage and optimize their job search process. Click the link below to our Devpost for the proejct.`,
+  longDescription: `Inspired by the greek word άνθηση which means "bloom", Anthizo seeks to help people bloom into a new job role through its features. Features include application status tracking, streaks, hidden badges, and a Google Gemini API chatbot for support. An AI-powered job application tracker prototype created for SwampHacks 2026.`,
+      links: [{label:'Devpost', href:'https://devpost.com/software/anthizo'}, {label:'Demo', href: 'https://www.youtube.com/watch?v=wSrsL9DcR0M'}],
+      tags: ['Hackathon','AI', 'Productivity']
     }
   ];
 
@@ -183,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modalTitle.textContent = p.title;
     modalImage.src = p.image;
     modalImage.alt = p.title;
-    // Render a longer, formatted description in the modal.
     // Support an explicit longDescription property, otherwise use description.
     const longDesc = p.longDescription || p.description || '';
     // Basic HTML-escape and paragraphify newlines for safe display

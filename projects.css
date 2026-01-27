@@ -1,9 +1,7 @@
 /* Projects page specific styles: cards, grid, modal, filters */
 :root {
   --switch-bg: #f5f5f6;
-  --chat-bg: #f5f5f6;
   --chat-txt: #111f7a;
-  --chat-gr: linear-gradient(180deg, #6ee2e0 0%, #38ccf9 100%);
   --title: #44dbb5;
   --text: #255fb6;
   --body: #008aca;
@@ -28,9 +26,7 @@
 /* Dark mode variables */
 .dark-mode {
   --switch-bg: #353b49;
-  --chat-bg: #474f62;
   --chat-txt: #c0d4e6;
-  --chat-gr: linear-gradient(180deg, #3cabcd 0%, #2c69c5 100%);
   --title: #5cd6b7;
   --text: #39a8dc;
   --body: #77dcf8;
@@ -131,15 +127,15 @@
 
 .projects-grid{
   display:grid;
-  /* fixed column width so cards keep their size when fewer columns are present */
   grid-template-columns: repeat(auto-fit, minmax(260px, 260px));
   gap:1.25rem;
   margin-top: 1rem;
-  margin-bottom: 3rem; /* Add space at bottom to prevent footer from jumping */
-  min-height: 60vh; /* Ensure minimum height even with few results */
-  justify-content: center; /* center columns when there's leftover space */
+  margin-bottom: 3rem;
+  min-height: 60vh;
+  justify-content: center;
 }
-.project-card{
+
+/* .project-card{
   background:var(--card-bg);
   border-radius:12px;
   border:3px solid var(--card-border);
@@ -149,12 +145,63 @@
   flex-direction:column;
   cursor:pointer;
   transition: transform .18s ease, box-shadow .18s ease;
-  width: 260px; /* fixed card width matching the grid column */
-  aspect-ratio: 3 / 4; /* keep consistent height-to-width ratio */
+  width: 260px; 
+  aspect-ratio: 3 / 4;
+}
+.project-card::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from 180deg at 50% 50%, var(--light) 0deg, var(--dark) 360deg);
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 12px;
+} */
+
+
+.project-card{
+  background:var(--card-bg);
+  border-radius:12px;
+  border:3px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  width: 260px;
+  z-index: 0;
+  aspect-ratio: 3 / 4;
+  position: relative;
+}
+
+/* Modal content border glow */
+.project-modal-content{position:relative;}
+.project-modal-content::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 8px;
+  background: conic-gradient(from 180deg at 50% 50%, #31b3f0, #44dbb5, #31b3f0, #111f7a, #38ccf9, #4386e9);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  /* mask-composite: exclude; */
+  z-index: -1;
+  filter: blur(12px);
+  opacity: 0.8;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  from { --angle: 0deg; }
+  to { --angle: 360deg; }
 }
 
 .project-card:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(35,63,125,0.12); }
-.project-card .thumb{ width:100%; height:160px; object-fit:contain; display:block; background: linear-gradient(135deg, var(--light), var(--dark)); padding:12px; }
+.project-card .thumb{ width:100%; height:160px; object-fit:contain; display:block; background: linear-gradient(135deg, var(--light), var(--dark)); padding-bottom: 12px; padding-top: 12px;}
 .project-card .card-body{ padding:12px 14px; flex:1 1 auto; display:flex; flex-direction:column; }
 .project-title{ font-size:1.05rem; color:var(--title); margin:0 0 8px 0; }
 .project-excerpt{ color:var(--text); font-size:0.95rem; margin:0 0 12px 0; flex:1 1 auto; }
