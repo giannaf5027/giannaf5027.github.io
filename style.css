@@ -9,7 +9,7 @@
   --body: #008aca;
   --back: white;
   --support: #3bb2e9;
-  --hyperlinks: #002fff;
+  --hyperlinks: #2143db;
   --hf: #31b3f0;
   --hftxt: white;
   --hfhover: #0092d6;
@@ -114,6 +114,251 @@ main {
   justify-content: center;
   font-size: 20px;
 }
+
+/* global bento box wrappers */
+.bento-box { overflow: hidden; border-radius: 12px; background: #fff; display: block; }
+.bento-box img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* ========== HORIZONTAL BENTO SCROLLER ========== */
+.bento-scroller-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+  background: linear-gradient(to right, var(--back), var(--back));
+}
+
+.bento-scroller {
+  display: flex;
+  gap: 12px;
+  animation: scroll-left linear infinite;
+  width: fit-content;
+  padding: 0 12px;
+  height: 320px;
+  align-items: stretch;
+}
+
+.photo-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.photo-wrapper.landscape-pair {
+  flex-direction: column;
+  height: 320px;
+}
+
+.photo-wrapper.landscape-pair .bento-box {
+  flex: 1 1 auto;
+  height: 154px;
+}
+
+.photo-wrapper.portrait-single {
+  flex-direction: row;
+  height: 320px;
+}
+
+.photo-wrapper.portrait-single .bento-box {
+  height: 320px;
+  align-self: stretch;
+}
+
+.bento-scroller.paused {
+  animation-play-state: paused !important;
+  cursor: pointer;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-87.5%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-87.5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.bento-scroller .bento-box {
+  cursor: grab;
+}
+
+.photo-wrapper .bento-box {
+  flex: 0 0 auto;
+  width: 200px;
+}
+
+.photo-wrapper.portrait-single .bento-box {
+  width: 240px;
+}
+
+.photo-wrapper.landscape-pair .bento-box {
+  width: 240px;
+}
+
+.bento-scroller .bento-box.stat-box {
+  flex: 0 0 240px;
+  height: 320px;
+}
+
+.bento-scroller.bento-scroller-reverse {
+  animation-name: scroll-right;
+}
+
+.bento-scroller .bento-box:active {
+  cursor: grabbing;
+}
+
+.bento-scroller .bento-box.stat-box {
+  flex: 0 0 240px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  text-align: center;
+  background: var(--title);
+  color: white;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .bento-scroller {
+    height: 240px;
+  }
+
+  .photo-wrapper.landscape-pair {
+    height: 240px;
+  }
+
+  .photo-wrapper.landscape-pair .bento-box {
+    height: 114px;
+  }
+
+  .photo-wrapper.portrait-single {
+    height: 240px;
+  }
+
+  .photo-wrapper.portrait-single .bento-box {
+    height: 240px;
+    width: 180px;
+  }
+
+  .photo-wrapper.landscape-pair .bento-box {
+    width: 180px;
+  }
+
+  .bento-scroller .bento-box.stat-box {
+    flex: 0 0 180px;
+    height: 240px;
+  }
+}
+
+/* ========== BENTO SCROLLER 3 - BIG BOXES ========== */
+.bento-scroller-container-3 {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+  background: linear-gradient(to right, var(--back), var(--back));
+}
+
+.bento-scroller-3 {
+  display: flex;
+  gap: 16px;
+  animation: scroll-left linear infinite;
+  width: fit-content;
+  padding: 0 16px;
+  height: 400px;
+  align-items: stretch;
+}
+
+.bento-scroller-3 .bento-box {
+  flex: 0 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: grab;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.bento-scroller-3 .bento-box:hover {
+  transform: scale(1.02);
+}
+
+.bento-scroller-3 .bento-box:active {
+  cursor: grabbing;
+}
+
+/* Size variations for bento layout */
+.bento-scroller-3 .bento-box.size-large {
+  width: 280px;
+  height: 280px;
+}
+
+.bento-scroller-3 .bento-box.size-square {
+  width: 240px;
+  height: 240px;
+}
+
+.bento-scroller-3 .bento-box.size-landscape {
+  width: 280px;
+  height: 180px;
+}
+
+.bento-scroller-3 .bento-box.size-portrait {
+  width: 180px;
+  height: 280px;
+}
+
+.bento-scroller-3 .bento-box.size-tall {
+  width: 160px;
+  height: 320px;
+}
+
+@media screen and (max-width: 768px) {
+  .bento-scroller-3 {
+    height: 280px;
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .bento-scroller-3 .bento-box.size-large {
+    width: 200px;
+    height: 200px;
+  }
+
+  .bento-scroller-3 .bento-box.size-square {
+    width: 170px;
+    height: 170px;
+  }
+
+  .bento-scroller-3 .bento-box.size-landscape {
+    width: 200px;
+    height: 130px;
+  }
+
+  .bento-scroller-3 .bento-box.size-portrait {
+    width: 130px;
+    height: 200px;
+  }
+
+  .bento-scroller-3 .bento-box.size-tall {
+    width: 120px;
+    height: 230px;
+  }
+}
+
+/* ========== END SCROLLER ========== */
 
 .navbar li {
   position: relative;

@@ -113,6 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
   longDescription: `Inspired by the greek word άνθηση which means "bloom", Anthizo seeks to help people bloom into a new job role through its features. Features include application status tracking, streaks, hidden badges, and a Google Gemini API chatbot for support. An AI-powered job application tracker prototype created for SwampHacks 2026.`,
       links: [{label:'Devpost', href:'https://devpost.com/software/anthizo'}, {label:'Demo', href: 'https://www.youtube.com/watch?v=wSrsL9DcR0M'}],
       tags: ['Hackathon','AI', 'Productivity']
+    },
+    {
+      id: 'Psongs',
+      title: 'Psongs',
+      image: 'content/Images/psongs.png',
+      excerpt: 'Music discovery app.',
+  description: `A music discovery app built to help users find new music based on diferent Bible verses. Click the link below to try the live site and explore the recommendation engine.`,
+  longDescription: `A music discovery app prototype created for Theta Alpha, featuring a recommendation engine. Users can discover new songs and artists based on user interactions and preferences. The application also has a Discord integration, and can be deployed as a demo with links to the code.`,
+      links: [{label:'Live', href:'https://v0-theta-alpha-beta-23.vercel.app/'}],
+      tags: ['AI', 'Music', 'Bot']
     }
   ];
 
