@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 'Psongs',
       title: 'Psongs',
-      image: 'content/Images/psongs.png',
+      image: 'content/Images/Psong.png',
       excerpt: 'Music discovery app.',
   description: `A music discovery app built to help users find new music based on diferent Bible verses. Click the link below to try the live site and explore the recommendation engine.`,
   longDescription: `A music discovery app prototype created for Theta Alpha, featuring a recommendation engine. Users can discover new songs and artists based on user interactions and preferences. The application also has a Discord integration, and can be deployed as a demo with links to the code.`,
